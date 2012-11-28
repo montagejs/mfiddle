@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- <copyright>
+Copyright (c) 2012, Motorola Mobility LLC.
+All Rights Reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright notice,
+  this list of conditions and the following disclaimer in the documentation
+  and/or other materials provided with the distribution.
+
+* Neither the name of Motorola Mobility LLC nor the names of its
+  contributors may be used to endorse or promote products derived from this
+  software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+</copyright> -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title> Draw </title>
+    <link rel="stylesheet" type="text/css" href="draw.css"/>
+    <script type="text/javascript" src="../../../montage.js" data-package="../../"></script>
+    <script type="text/montage-serialization">
+{
+    "draw1": {
+        "prototype": "ui/draw/draw",
+        "properties": {
+            "repetition": {"@": "repetition"},
+            "componentC": {"@": "componentC"},
+            "componentC1": {"@": "componentC1"},
+            "componentNoelement": {"@": "componentNoelement"},
+            "componentD": {"@": "componentD"},
+            "componentDtarget": {"@": "componentDtarget"},
+            "componentE": {"@": "componentE"},
+            "componentE11": {"@": "componentE11"},
+            "componentStyle": {"@": "componentStyle"},
+            "componentWithoutIdentifier": {"@": "componentWithoutIdentifier"},
+            "componentWithIdentifier": {"@": "componentWithIdentifier"},
+            "componentOwner": {"@": "componentOwner"},
+            "componentLayout": {"@": "componentLayout"},
+            "componentToBeCleaned": {"@": "componentToBeCleaned"},
+            "text1": {"@": "text1"},
+            "componentDrawsParent": {"@": "componentDrawsParent"},
+            "componentParent": {"@": "componentParent"},
+            "componentWithDelegate": {"@": "componentWithDelegate"},
+            "componentList": {"@": "componentList"}
+        }
+    },
+    "repetition": {
+        "prototype": "montage/ui/repetition.reel",
+        "properties": {
+            "element": {"#": "repetition"},
+            "objects": [1, 2, 3]
+        }
+    },
+    "componentC": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "componentC"},
+            "hasTemplate": false
+        }
+    },
+    "componentC1": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "componentC1"},
+            "hasTemplate": false
+        }
+    },
+
+    "componentNoelement": {
+        "prototype": "ui/draw/component-noelement.reel",
+        "properties": {
+            "value": "componentNoelement",
+            "parentOfNoElement": {"@": "componentE"}
+        }
+    },
+
+    "componentD": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "componentD"},
+            "hasTemplate": false
+        }
+    },
+    "componentD1": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "componentD1"},
+            "hasTemplate": false
+        }
+    },
+    "componentDtarget": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "componentDtarget"},
+            "hasTemplate": false
+        }
+    },
+    "componentE": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "componentE"},
+            "hasTemplate": false
+        }
+    },
+    "componentE11": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "componentE11"},
+            "hasTemplate": false
+        }
+    },
+    "componentStyle": {
+        "prototype": "ui/draw/component-style.reel",
+        "properties": {
+            "element": {"#": "component-style"}
+        }
+    },
+    "componentWithoutIdentifier": {
+        "prototype": "montage/ui/component"
+    },
+    "componentWithIdentifier": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "identifier": "anIdentifier"
+        }
+    },
+    "componentOwner": {
+        "prototype": "ui/draw/component-owner.reel",
+        "properties": {
+            "element": {"#": "component-owner"}
+        }
+    },
+    "componentLayout": {
+        "prototype": "ui/draw/component-layout.reel",
+        "properties": {
+            "element": {"#": "component-layout"},
+            "left": {"#": "component-layout-left"},
+            "right": {"#": "component-layout-right"},
+            "leftComponent": {"@": "componentLayoutLeft"},
+            "rightComponent": {"@": "componentLayoutRight"}
+        }
+    },
+    "componentLayoutLeft": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "component-layout-left"},
+            "hasTemplate": false
+        }
+    },
+    "componentLayoutRight": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "component-layout-right"},
+            "hasTemplate": false
+        }
+    },
+    "componentToBeCleaned": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "component-tobeclean"},
+            "hasTemplate": false,
+            "text": {"@": "text1"}
+        }
+    },
+    "text1": {
+        "prototype": "montage/ui/dynamic-text.reel",
+        "properties": {
+            "element": {"#": "text1"},
+            "value": "Text"
+        }
+    },
+    "componentDrawsParent": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "componentDrawsParent"},
+            "hasTemplate": false
+        }
+    },
+    "componentParent": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "element": {"#": "parentComponent"},
+            "hasTemplate": false
+        }
+    },
+    "componentWithDelegate": {
+        "prototype": "montage/ui/component",
+        "properties": {
+            "delegate": {"@": "owner"},
+            "hasTemplate": false
+        }
+    },
+    "componentList": {
+        "prototype": "ui/draw/component-list.reel",
+        "properties": {
+            "element": {"#": "componentList"}
+        }
+    },
+    "text2": {
+        "prototype": "montage/ui/dynamic-text.reel",
+        "properties": {
+            "element": {"#": "text2"},
+            "value": "Text 2"
+        }
+    },
+    "owner": {
+        "prototype": "montage/ui/application",
+        "properties": {
+            "delegate": {"@": "draw1"}
+        }
+    }
+}
+    </script>
+
+</head>
+<body>
+<div class="componentA">
+    <div class="componentA1">A1</div>
+</div>
+<div class="componentB">
+    <div class="componentB1">B1</div>
+    <div class="componentB2">B2</div>
+</div>
+<div data-montage-id="componentC">
+    <div data-montage-id="fakeComponentC1"></div>
+</div>
+<div data-montage-id="componentC1">C1</div>
+<div data-montage-id="componentD">
+    <h1>
+        <div data-montage-id="componentD1">D1</div>
+    </h1>
+</div>
+<div data-montage-id="componentDtarget"></div>
+<div data-montage-id="repetition"><h3>Original Content</h3><p>here</p></div>
+<div data-montage-id="componentE">
+    <div data-montage-id="componentE1" id="componentE1">
+        <div data-montage-id="componentE11"></div>
+    </div>
+</div>
+<div style="margin: 2px" data-montage-id="component-style"></div>
+<div data-montage-id="component-owner"></div>
+<div data-montage-id="component-layout"></div>
+<div data-montage-id="component-layout-left">Left</div>
+<div data-montage-id="component-layout-right">Right</div>
+<div data-montage-id="component-tobeclean">
+    To Be Clean
+    <span data-montage-id="text1"></span>
+</div>
+
+<div data-montage-id="parentComponent">
+    Buzz
+    <div data-montage-id="componentDrawsParent">Fizz</div>
+</div>
+
+<div data-montage-id="componentList" id="componentList">
+    <span data-montage-id="text2"></span>
+</div>
+
+</body>
+</html>
