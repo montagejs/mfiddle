@@ -2,6 +2,6 @@
     "name": "mfiddle",
     "version": "0.1.0",
     "dependencies": {
-        "montage" : "0.10.x - 0.11.x"
+        "montage" : "0.12.3"
     }
 }
