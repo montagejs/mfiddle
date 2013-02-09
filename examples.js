@@ -60,6 +60,62 @@ exports.examples = [
         javascript: ""
     },
     {
+        label: "A simple Listener",
+        css: "",
+        serialization: {
+            "owner": {
+                "properties": {
+                    "element": {"#": "component"}
+                }
+            },
+
+            "button": {
+                "prototype": "montage/ui/button.reel",
+                "properties": {
+                    "element": {"#": "button"},
+                    "label": "Click Me!"
+                },
+                "listeners": [{
+                    "type": "action",
+                    "listener": {"@": "owner"}
+                }]
+            }
+        },
+        html: '<div data-montage-id="component">\n	<button data-montage-id="button"></button>\n</div>',
+        javascript: 'var Montage = require("montage").Montage,\n    Component = require("montage/ui/component").Component;\n\nexports.Owner = Montage.create(Component, {\n    handleButtonAction: {\n        value: function() {\n            console.log("action!");\n        }\n    }\n});\n'
+    },
+    {
+        label: "A simple Condition",
+        css: "",
+        serialization: {
+            "owner": {
+                "properties": {
+                    "element": {"#": "component"}
+                }
+            },
+
+            "toggle": {
+                "prototype": "montage/ui/input-checkbox.reel",
+                "properties": {
+                    "element": {"#": "toggle"},
+                    "checked": true
+                }
+            },
+
+            "hideBlockCondition": {
+                "prototype": "montage/ui/condition.reel",
+                "properties": {
+                    "element": {"#": "block"}
+                },
+                "bindings": {
+                    "condition": {"<-": "@toggle.checked"}
+                }
+            }
+        },
+        html: '<div data-montage-id="component">\n	<label><input type="checkbox" data-montage-id="toggle">Show</label>\n    <div data-montage-id="block">\n        <h2>Hello There!</h2>\n    </div>\n</div>',
+        javascript: 'var Montage = require("montage").Montage,\n    Component = require("montage/ui/component").Component;\n\nexports.Owner = Montage.create(Component, {\n});\n'
+    },
+    {
         label: "Two way Bindings",
         css: ".range2 {\n    width: 100%;\n}",
         serialization: {
@@ -117,5 +173,44 @@ exports.examples = [
         },
         html: '<ul data-montage-id="repetition">\n  <li>\n    Hello there <span data-montage-id="dynamicText"></span>!\n  </li>\n</ul>',
         javascript: ""
+    },
+    {
+        label: "Listening on repeated Buttons",
+        css: "",
+        serialization: {
+            "owner": {
+                "properties": {
+                    "element": {"#": "owner"}
+                }
+            },
+
+            "repetition": {
+                "prototype": "montage/ui/repetition.reel",
+                "properties": {
+                    "objects": [
+                        "One",
+                        "Two",
+                        "Three"
+                    ],
+                    "element": {"#": "repetition"}
+                }
+            },
+
+            "button": {
+                "prototype": "montage/ui/button.reel",
+                "properties": {
+                    "element": {"#": "button"}
+                },
+                "bindings": {
+                    "label": {"<-": "@repetition.objectAtCurrentIteration"}
+                },
+                "listeners": [{
+                    "type": "action",
+                    "listener": {"@": "owner"}
+                }]
+            }
+        },
+        html: '<div data-montage-id="owner">\n    <ul data-montage-id="repetition">\n        <button data-montage-id="button"></button>\n    </ul>\n</div>',
+        javascript: 'var Montage = require("montage").Montage,\n    Component = require("montage/ui/component").Component;\n\nexports.Owner = Montage.create(Component, {\n    handleAction: {\n        value: function(event) {\n            console.log("action: " + event.target.element.textContent);\n        }\n    }\n});\n'
     }
 ];

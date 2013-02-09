@@ -129,7 +129,19 @@ var gist = exports.gist = {
             cssCode = options.cssCode,
             htmlMarkup = options.htmlMarkup,
             jsCode = options.jsCode,
-            title = "title";
+            title = "title",
+            files = {};
+
+        if (cssCode) {
+            files["component.css"] = {"content": cssCode};
+        }
+        if (htmlMarkup) {
+            files["component.html"] = {"content": htmlMarkup};
+        }
+        if (jsCode) {
+            files["component.js"] = {"content": jsCode};
+        }
+        files["settings.json"] = {"content": JSON.stringify({})};
 
         gist.request({
             anon: options.anon,
@@ -149,20 +161,7 @@ var gist = exports.gist = {
             data: {
                 "description": title,
                 "public": true,
-                "files": {
-                    "component.css": {
-                        "content": cssCode
-                    },
-                    "component.html": {
-                        "content": htmlMarkup
-                    },
-                    "component.js": {
-                        "content": jsCode
-                    },
-                    "settings.json": {
-                        "content": JSON.stringify({})
-                    }
-                }
+                "files": files
             }
         });
     },
