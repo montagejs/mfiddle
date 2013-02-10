@@ -141,6 +141,21 @@ POSSIBILITY OF SUCH DAMAGE.
             }
         },
 
+        "gistLinkCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "gistLinkCondition"},
+                "removalStrategy": "hide"
+            }
+        },
+
+        "gistLink": {
+            "prototype": "montage/ui/anchor.reel",
+            "properties": {
+                "element": {"#": "gist"}
+            }
+        },
+
         "save": {
             "prototype": "montage/ui/button.reel",
             "properties": {
@@ -207,6 +222,9 @@ POSSIBILITY OF SUCH DAMAGE.
             <li>
                 <div class="component-button-holder"><div data-montage-id="componentButton"></div></div>
             </li>
+        </ul>
+        <ul id="links">
+            <li data-montage-id="gistLinkCondition" class="montage-invisible"><a data-montage-id="gist" href="" target="_blank" class="link">Gist</a></li>
         </ul>
         <ul id="menu">
             <li><div class="menu-button" data-montage-id="save">Save</div></li>
