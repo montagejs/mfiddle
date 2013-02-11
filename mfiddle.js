@@ -28,7 +28,7 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 </copyright> */
-var Montage = require("montage").Montage;
+var Montage = require("montage").Montage,
     Component = require("montage/ui/component").Component,
     Template = require("montage/ui/template").Template,
     gist = require("gist").gist;
@@ -51,6 +51,7 @@ exports.Mfiddle = Montage.create(Component, {
             var gistId = location.hash.slice(3);
             if (gistId) {
                 this.loadGist(gistId);
+                this.setupGistLink(gistId);
             } else {
                 this.loadExample(example);
                 this.executeFiddle();
@@ -328,6 +329,18 @@ exports.Mfiddle = Montage.create(Component, {
             if (gistId && gist.id != gistId) {
                 this.loadGist(gistId);
             }
+
+            this.setupGistLink(gistId);
+        }
+    },
+
+    setupGistLink: {
+        value: function(gistId) {
+            var gistLink = this.templateObjects.gistLink,
+                gistLinkCondition = this.templateObjects.gistLinkCondition;
+
+            gistLink.href = "https://gist.github.com/" + gistId;
+            gistLinkCondition.condition = !!gistId;
         }
     },
 

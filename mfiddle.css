@@ -105,6 +105,33 @@ html {
     border-right: 1px solid #404040;
     cursor: pointer;
 }
+#links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 6px;
+    right: 280px;
+    height: 36px;
+    overflow: hidden;
+}
+
+#links > li {
+    position: relative;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin: 6px 0 0 0;
+    padding: 0 12px 0 12px;
+}
+
+.link {
+    font-size: 14px;
+    line-height: 23px;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+}
 
 #menu {
     position: absolute;
@@ -332,6 +359,10 @@ html {
 
 #logger.open {
     height: 100%;
+}
+
+.montage-invisible {
+    display: none;
 }
 
 /* CodeMirror customizations */
