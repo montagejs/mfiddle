@@ -342,8 +342,8 @@ exports.Mfiddle = Montage.create(Component, {
             var gistLink = this.templateObjects.gistLink,
                 gistLinkCondition = this.templateObjects.gistLinkCondition;
 
-            gistLink.href = "https://gist.github.com/" + gistId;
             gistLinkCondition.condition = !!gistId;
+            gistLink.url = "https://gist.github.com/" + gistId;
         }
     },
 
