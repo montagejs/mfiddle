@@ -45,15 +45,17 @@ exports.ComponentButton = Montage.create(Component, /** @lends module:"ui/compon
     component: {value: null},
     _iconStyle: {value: null},
 
-    prepareForDraw: {
-        value: function() {
-            var self = this,
-                element = this._element;
+    enterDocument: {
+        value: function(firstTime) {
+            if (firstTime) {
+                var self = this,
+                    element = this._element;
 
-            this._iconStyle = this.templateObjects.icon.style;
-            element.addEventListener("click", function() {
-                self._dispatchActionEvent();
-            }, false);
+                this._iconStyle = this.templateObjects.icon.style;
+                element.addEventListener("click", function() {
+                    self._dispatchActionEvent();
+                }, false);
+            }
         }
     },
 

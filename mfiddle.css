@@ -181,7 +181,7 @@ html {
     height: 11px;
 }
 /* override Button defaults */
-.menu-button.montage-button:hover {
+.menu-button.matte-Button:hover {
     color: white;
     background-color: transparent;
 }

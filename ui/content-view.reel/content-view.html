@@ -42,22 +42,12 @@ POSSIBILITY OF SUCH DAMAGE.
         },
 
         "text": {
-            "prototype": "montage/ui/dynamic-text.reel",
+            "prototype": "montage/ui/text.reel",
             "properties": {
                 "element": {"#": "title"}
             },
             "bindings": {
                 "value": {"<-": "@owner.title"}
-            }
-        },
-
-        "slot": {
-            "prototype": "montage/ui/slot.reel",
-            "properties": {
-                "element": {"#": "slot"}
-            },
-            "bindings": {
-                "content": {"<-": "@owner.originalContent"}
             }
         }
     }</script>
@@ -65,7 +55,7 @@ POSSIBILITY OF SUCH DAMAGE.
 <body>
     <div data-montage-id="owner" class="content-view">
         <h2 data-montage-id="title">Title</h2>
-        <div data-montage-id="slot"></div>
+        <div data-param="*"></div>
     </div>
 </body>
 </html>

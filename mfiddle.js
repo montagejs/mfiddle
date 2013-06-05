@@ -30,7 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 </copyright> */
 var Montage = require("montage").Montage,
     Component = require("montage/ui/component").Component,
-    Template = require("montage/ui/template").Template,
+    Template = require("montage/core/template").Template,
     gist = require("gist").gist;
 
 exports.Mfiddle = Montage.create(Component, {
@@ -79,8 +79,8 @@ exports.Mfiddle = Montage.create(Component, {
 
                 if (html) {
                     // extract body and serialization
-                    htmlDocument = Template.createHtmlDocumentFromString(html);
-                    serialization = Template.getInlineSerialization(htmlDocument);
+                    htmlDocument = Template.createHtmlDocumentWithHtml(html);
+                    serialization = Template.getInlineObjectsString(htmlDocument);
                     html = htmlDocument.body.innerHTML;
 
                     // clean up a bit
@@ -163,10 +163,13 @@ exports.Mfiddle = Montage.create(Component, {
             var serializationObject = this._getSerializationObject(),
                 htmlCodeMirror = this.templateObjects.htmlCodeMirror,
                 html = htmlCodeMirror.value,
-                ownerMontageId = serializationObject && serializationObject.getProperty("owner.properties.element.#"),
+                ownerMontageId,
                 div = this._tmpDiv,
                 addHtmlAtTheEnd = true,
                 root;
+
+            ownerMontageId = serializationObject &&
+                Montage.getPath.call(serializationObject, "owner.properties.element['#']");
 
             if (ownerMontageId) {
                 if (htmlCodeMirror.hasModeErrors()) {

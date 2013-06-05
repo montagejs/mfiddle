@@ -44,15 +44,17 @@ var Montage = require("montage").Montage,
 exports.ExampleButton = Montage.create(Component, /** @lends module:"ui/example-button.reel".ExampleButton# */ {
     example: {value: false},
 
-    prepareForDraw: {
-        value: function() {
-            var self = this,
-                element = this._element;
+    enterDocument: {
+        value: function(firstTime) {
+            if (firstTime) {
+                var self = this,
+                    element = this._element;
 
-            element.classList.add("example-button");
-            element.addEventListener("click", function() {
-                self._dispatchActionEvent();
-            }, false);
+                element.classList.add("example-button");
+                element.addEventListener("click", function() {
+                    self._dispatchActionEvent();
+                }, false);
+            }
         }
     },
 

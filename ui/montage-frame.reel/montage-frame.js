@@ -58,24 +58,26 @@ exports.MontageFrame = Montage.create(Component, /** @lends module:"montage/ui/m
         value: []
     },
 
-    prepareForDraw: {
-        value: function() {
+    enterDocument: {
+        value: function(firstTime) {
             var self = this;
 
-            window.addEventListener("message", function(event) {
-                if (event._event.source === self._element.contentWindow
-                    && event.data === "ready") {
-                    self._iframeReady = true;
-                    self.needsDraw = true;
-                    self._iframeWindow = self._element.contentWindow;
-                    self._iframeDocument = self._element.contentDocument;
-                    self._cssElement = self._iframeDocument.head.querySelector("style");
-                    self._javascriptElement = self._iframeDocument.head.querySelector("script[type='text/montage-javascript']");
+            if (firstTime) {
+                window.addEventListener("message", function(event) {
+                    if (event._event.source === self._element.contentWindow
+                        && event.data === "ready") {
+                        self._iframeReady = true;
+                        self.needsDraw = true;
+                        self._iframeWindow = self._element.contentWindow;
+                        self._iframeDocument = self._element.contentDocument;
+                        self._cssElement = self._iframeDocument.head.querySelector("style");
+                        self._javascriptElement = self._iframeDocument.head.querySelector("script[type='text/montage-javascript']");
 
-                    self._iframeWindow.console.debug = self.debug.bind(self);
-                    self._iframeWindow.console.log = self.log.bind(self);
-                }
-            }, false);
+                        self._iframeWindow.console.debug = self.debug.bind(self);
+                        self._iframeWindow.console.log = self.log.bind(self);
+                    }
+                }, false);
+            }
         }
     },
 

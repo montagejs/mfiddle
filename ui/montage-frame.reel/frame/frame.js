@@ -1,4 +1,4 @@
-var Template = require("montage/ui/template").Template,
+var Template = require("montage/core/template").Template,
     Component = require("montage/ui/component").Component,
     Promise = require("montage/core/promise").Promise,
     rootComponent = require("montage/ui/component").__root__;
@@ -26,32 +26,28 @@ window.Frame = {
                 var Owner = module.Owner;
 
                 if (Owner) {
-                    self.instantiateWithOwner(module.Owner.create());
+                    self.instantiate(new module.Owner());
                 } else {
-                    self.instantiateWithOwner(Component.create());
+                    self.instantiate();
                 }
             });
         } else {
-            this.instantiateWithOwner(Component.create());
+            this.instantiate();
         }
     },
 
-    instantiateWithOwner: function(owner) {
-        // TODO: do I always need to do this?
-        var template = Template.create().initWithDocument(window.document, window.require);
+    instantiate: function(owner) {
+        if (owner) {
+            owner.hasTemplate = false;
+        }
 
-        // the template is built-in
-        owner.hasTemplate = false;
-        // ask template to fill templateObjects
-        owner.templateObjects = {};
-
-        template.instantiateWithOwnerAndDocument(owner, window.document, function(owner) {
+        require("montage/core/template").instantiateDocument(window.document, window.require, {owner: owner})
+        .then(function(part) {
             if (owner) {
-                owner.needsDraw = true;
-            } else {
-                rootComponent.needsDraw = true;
+                owner.attachToParentComponent();
             }
-        });
+            rootComponent.needsDraw = true;
+        }).done();
     },
 
     // HACK: until this functionality is ready in require

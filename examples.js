@@ -9,7 +9,7 @@ exports.examples = [
                 }
             },
             "button": {
-                "prototype": "montage/ui/button.reel",
+                "prototype": "matte/ui/button.reel",
                 "properties": {
                     "element": {"#": "button"},
                     "label": "Click Me!"
@@ -17,14 +17,14 @@ exports.examples = [
             }
         },
         html: '<div data-montage-id="component">\n\t<button data-montage-id="button"></button>\n</div>',
-        javascript: 'var Montage = require("montage").Montage,\n    Component = require("montage/ui/component").Component;\n\nexports.Owner = Montage.create(Component, {\n    templateDidLoad: {\n        value: function() {\n            console.log("templateDidLoad");\n        }\n    }\n});\n'
+        javascript: 'Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    templateDidLoad: {\n        value: function() {\n            console.log("templateDidLoad");\n        }\n    }\n});\n'
     },
     {
         label: "A simple Button",
         css: "",
         serialization: {
             "button": {
-                "prototype": "montage/ui/button.reel",
+                "prototype": "matte/ui/button.reel",
                 "properties": {
                     "element": {"#": "button"},
                     "label": "Click Me!"
@@ -39,7 +39,7 @@ exports.examples = [
         css: ".range {\n    width: 100%;\n}",
         serialization: {
             "range": {
-                "prototype": "montage/ui/input-range.reel",
+                "prototype": "matte/ui/input-range.reel",
                 "properties": {
                     "element": {"#": "range"},
                     "value": 50
@@ -47,16 +47,16 @@ exports.examples = [
             },
 
             "dynamicText": {
-                "prototype": "montage/ui/dynamic-text.reel",
+                "prototype": "montage/ui/text.reel",
                 "properties": {
-                    "element": {"#": "dynamicText"}
+                    "element": {"#": "text"}
                 },
                 "bindings": {
                     "value": {"<-": "@range.value"}
                 }
             }
         },
-        html: '<input type="range" data-montage-id="range" class="range">\n<h2 data-montage-id="dynamicText"></h2>',
+        html: '<input type="range" data-montage-id="range" class="range">\n<h2 data-montage-id="text"></h2>',
         javascript: ""
     },
     {
@@ -70,7 +70,7 @@ exports.examples = [
             },
 
             "button": {
-                "prototype": "montage/ui/button.reel",
+                "prototype": "matte/ui/button.reel",
                 "properties": {
                     "element": {"#": "button"},
                     "label": "Click Me!"
@@ -82,7 +82,7 @@ exports.examples = [
             }
         },
         html: '<div data-montage-id="component">\n	<button data-montage-id="button"></button>\n</div>',
-        javascript: 'var Montage = require("montage").Montage,\n    Component = require("montage/ui/component").Component;\n\nexports.Owner = Montage.create(Component, {\n    handleButtonAction: {\n        value: function() {\n            console.log("action!");\n        }\n    }\n});\n'
+        javascript: 'Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    handleButtonAction: {\n        value: function() {\n            console.log("action!");\n        }\n    }\n});\n'
     },
     {
         label: "A simple Condition",
@@ -95,7 +95,7 @@ exports.examples = [
             },
 
             "toggle": {
-                "prototype": "montage/ui/input-checkbox.reel",
+                "prototype": "matte/ui/input-checkbox.reel",
                 "properties": {
                     "element": {"#": "toggle"},
                     "checked": true
@@ -113,14 +113,14 @@ exports.examples = [
             }
         },
         html: '<div data-montage-id="component">\n	<label><input type="checkbox" data-montage-id="toggle">Show</label>\n    <div data-montage-id="block">\n        <h2>Hello There!</h2>\n    </div>\n</div>',
-        javascript: 'var Montage = require("montage").Montage,\n    Component = require("montage/ui/component").Component;\n\nexports.Owner = Montage.create(Component, {\n});\n'
+        javascript: 'Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n});\n'
     },
     {
         label: "Two way Bindings",
         css: ".range2 {\n    width: 100%;\n}",
         serialization: {
             "number": {
-                "prototype": "montage/ui/input-number.reel",
+                "prototype": "matte/ui/input-number.reel",
                 "properties": {
                     "element": {"#": "number"},
                     "value": 50
@@ -128,7 +128,7 @@ exports.examples = [
             },
 
             "range1": {
-                "prototype": "montage/ui/input-range.reel",
+                "prototype": "matte/ui/input-range.reel",
                 "properties": {
                     "element": {"#": "range1"}
                 },
@@ -138,7 +138,7 @@ exports.examples = [
             },
 
             "range2": {
-                "prototype": "montage/ui/input-range.reel",
+                "prototype": "matte/ui/input-range.reel",
                 "properties": {
                     "element": {"#": "range2"}
                 },
@@ -157,21 +157,21 @@ exports.examples = [
             "repetition": {
                 "prototype": "montage/ui/repetition.reel",
                 "properties": {
-                    "objects": ["Mike", "François", "Afonso", "Heather"],
+                    "content": ["Mike", "François", "Afonso", "Heather"],
                     "element": {"#": "repetition"}
                 }
             },
             "dynamicText": {
-                "prototype": "montage/ui/dynamic-text.reel",
+                "prototype": "montage/ui/text.reel",
                 "properties": {
-                    "element": {"#": "dynamicText"}
+                    "element": {"#": "text"}
                 },
                 "bindings": {
                     "value": {"<-": "@repetition.objectAtCurrentIteration"}
                 }
             }
         },
-        html: '<ul data-montage-id="repetition">\n  <li>\n    Hello there <span data-montage-id="dynamicText"></span>!\n  </li>\n</ul>',
+        html: '<ul data-montage-id="repetition">\n  <li>\n    Hello there <span data-montage-id="text"></span>!\n  </li>\n</ul>',
         javascript: ""
     },
     {
@@ -187,7 +187,7 @@ exports.examples = [
             "repetition": {
                 "prototype": "montage/ui/repetition.reel",
                 "properties": {
-                    "objects": [
+                    "content": [
                         "One",
                         "Two",
                         "Three"
@@ -197,7 +197,7 @@ exports.examples = [
             },
 
             "button": {
-                "prototype": "montage/ui/button.reel",
+                "prototype": "matte/ui/button.reel",
                 "properties": {
                     "element": {"#": "button"}
                 },
@@ -211,6 +211,6 @@ exports.examples = [
             }
         },
         html: '<div data-montage-id="owner">\n    <ul data-montage-id="repetition">\n        <button data-montage-id="button"></button>\n    </ul>\n</div>',
-        javascript: 'var Montage = require("montage").Montage,\n    Component = require("montage/ui/component").Component;\n\nexports.Owner = Montage.create(Component, {\n    handleAction: {\n        value: function(event) {\n            console.log("action: " + event.target.element.textContent);\n        }\n    }\n});\n'
+        javascript: 'Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    handleAction: {\n        value: function(event) {\n            console.log("action: " + event.target.element.textContent);\n        }\n    }\n});\n'
     }
 ];

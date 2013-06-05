@@ -1,0 +1,8 @@
+{
+    "name": "mfiddle-frame",
+    "version": "0.1.0",
+    "mappings": {
+        "montage" : "../../../node_modules/montage",
+        "matte" : "../../../node_modules/matte"
+    }
+}

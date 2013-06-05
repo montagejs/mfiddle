@@ -53,7 +53,7 @@ POSSIBILITY OF SUCH DAMAGE.
     bottom: 0;
 }
 
-.Logger .montage-button {
+.Logger .matte-Button {
     height: 30px;
 
     border-right: 0;
@@ -75,11 +75,11 @@ POSSIBILITY OF SUCH DAMAGE.
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
 }
 
-.Logger .montage-button:hover {
+.Logger .matte-Button:hover {
    color: #EEEEEE;
 }
 
-.Logger .montage-button.pressed, .Logger .montage-button:active {
+.Logger .matte-Button.pressed, .Logger .matte-Button.active {
     color: #EEEEEE;
 
     background: #000000; /* Old browsers */

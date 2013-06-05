@@ -3,7 +3,7 @@ exports.components = [
         label: "Button", name: "button",
         x: 0, y: -76, left: 11,
         serialization: {
-            "prototype": "montage/ui/button.reel",
+            "prototype": "matte/ui/button.reel",
             "properties": {
                 "label": "Button",
                 "enabled": true
@@ -15,7 +15,7 @@ exports.components = [
         label: "Range", name: "range",
         x: -45, y: -76, width: 43, left: 13,
         serialization: {
-            "prototype": "montage/ui/input-range.reel",
+            "prototype": "matte/ui/input-range.reel",
             "properties": {
                 "minValue": 0,
                 "maxValue": 100,
@@ -28,7 +28,7 @@ exports.components = [
         label: "Toggle", name: "toggle",
         x: 0, y: -99, left: 12,
         serialization: {
-            "prototype": "montage/ui/toggle-button.reel",
+            "prototype": "matte/ui/toggle-button.reel",
             "properties": {
                 "value": true,
                 "pressedLabel": "On",
@@ -41,7 +41,7 @@ exports.components = [
         label: "Checkbox", name: "checkbox",
         x: -89, y: -76, left: 22, width: 24,
         serialization: {
-            "prototype": "montage/ui/input-checkbox.reel",
+            "prototype": "matte/ui/input-checkbox.reel",
             "properties": {
                 "checked": true
             }
@@ -52,7 +52,7 @@ exports.components = [
         label: "InputText", name: "inputText",
         x: -71, y: -101, left: 19,
         serialization: {
-            "prototype": "montage/ui/input-text.reel",
+            "prototype": "matte/ui/input-text.reel",
             "properties": {
                 "value": "Editable text"
             }
@@ -63,7 +63,7 @@ exports.components = [
         label: "DynamicText", name: "dynamicText",
         x: 0, y: -122, left: 20, width: 28,
         serialization: {
-            "prototype": "montage/ui/dynamic-text.reel",
+            "prototype": "montage/ui/text.reel",
             "properties": {
                 "value": "Text"
             }

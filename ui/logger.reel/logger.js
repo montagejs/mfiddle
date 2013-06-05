@@ -72,7 +72,7 @@ exports.Logger = Montage.create(Component, {
 
     templateDidLoad: {
         value: function() {
-            this.addPropertyChangeListener("input", this);
+            this.addRangeAtPathChangeListener("input", this, "handleInputChange");
         }
     },
 
@@ -114,11 +114,9 @@ exports.Logger = Montage.create(Component, {
         }
     },
 
-    handleChange: {
-        value: function(notification) {
-            var newMessages = notification.plus;
-
-            for (var i = 0, message; (message = newMessages[i]); i++) {
+    handleInputChange: {
+        value: function(plus) {
+            for (var i = 0, message; (message = plus[i]); i++) {
                 this.log(message);
             }
         }

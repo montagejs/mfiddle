@@ -127,7 +127,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 "element": {"#": "components"}
             },
             "bindings": {
-                "objects": {"<-": "@owner.components"}
+                "content": {"<-": "@owner.components"}
             }
         },
 
@@ -145,33 +145,33 @@ POSSIBILITY OF SUCH DAMAGE.
             "prototype": "montage/ui/condition.reel",
             "properties": {
                 "element": {"#": "gistLinkCondition"},
-                "removalStrategy": "hide"
+                "condition": false
             }
         },
 
         "gistLink": {
-            "prototype": "montage/ui/anchor.reel",
+            "prototype": "matte/ui/anchor.reel",
             "properties": {
                 "element": {"#": "gist"}
             }
         },
 
         "save": {
-            "prototype": "montage/ui/button.reel",
+            "prototype": "matte/ui/button.reel",
             "properties": {
                 "element": {"#": "save"}
             }
         },
 
         "new": {
-            "prototype": "montage/ui/button.reel",
+            "prototype": "matte/ui/button.reel",
             "properties": {
                 "element": {"#": "new"}
             }
         },
 
         "run": {
-            "prototype": "montage/ui/button.reel",
+            "prototype": "matte/ui/button.reel",
             "properties": {
                 "element": {"#": "run"}
             }
@@ -183,7 +183,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 "element": {"#": "examples"}
             },
             "bindings": {
-                "objects": {"<-": "@owner.examples"}
+                "content": {"<-": "@owner.examples"}
             }
         },
 
