@@ -9,7 +9,7 @@ exports.examples = [
                 }
             },
             "button": {
-                "prototype": "matte/ui/button.reel",
+                "prototype": "digit/ui/button.reel",
                 "properties": {
                     "element": {"#": "button"},
                     "label": "Click Me!"
@@ -24,7 +24,7 @@ exports.examples = [
         css: "",
         serialization: {
             "button": {
-                "prototype": "matte/ui/button.reel",
+                "prototype": "digit/ui/button.reel",
                 "properties": {
                     "element": {"#": "button"},
                     "label": "Click Me!"
@@ -36,27 +36,27 @@ exports.examples = [
     },
     {
         label: "A simple Binding",
-        css: ".range {\n    width: 100%;\n}",
+        css: ".slider {\n    width: 100%;\n}",
         serialization: {
-            "range": {
-                "prototype": "matte/ui/input-range.reel",
+            "slider": {
+                "prototype": "digit/ui/slider.reel",
                 "properties": {
-                    "element": {"#": "range"},
+                    "element": {"#": "slider"},
                     "value": 50
                 }
             },
 
-            "dynamicText": {
+            "text": {
                 "prototype": "montage/ui/text.reel",
                 "properties": {
                     "element": {"#": "text"}
                 },
                 "bindings": {
-                    "value": {"<-": "@range.value"}
+                    "value": {"<-": "@slider.value"}
                 }
             }
         },
-        html: '<input type="range" data-montage-id="range" class="range">\n<h2 data-montage-id="text"></h2>',
+        html: '<input type="slider" data-montage-id="slider" class="slider">\n<h2 data-montage-id="text"></h2>',
         javascript: ""
     },
     {
@@ -70,7 +70,7 @@ exports.examples = [
             },
 
             "button": {
-                "prototype": "matte/ui/button.reel",
+                "prototype": "digit/ui/button.reel",
                 "properties": {
                     "element": {"#": "button"},
                     "label": "Click Me!"
@@ -95,7 +95,7 @@ exports.examples = [
             },
 
             "toggle": {
-                "prototype": "matte/ui/input-checkbox.reel",
+                "prototype": "digit/ui/checkbox.reel",
                 "properties": {
                     "element": {"#": "toggle"},
                     "checked": true
@@ -117,37 +117,37 @@ exports.examples = [
     },
     {
         label: "Two way Bindings",
-        css: ".range2 {\n    width: 100%;\n}",
+        css: ".slider2 {\n    width: 100%;\n}",
         serialization: {
             "number": {
-                "prototype": "matte/ui/input-number.reel",
+                "prototype": "digit/ui/number-field.reel",
                 "properties": {
                     "element": {"#": "number"},
                     "value": 50
                 }
             },
 
-            "range1": {
-                "prototype": "matte/ui/input-range.reel",
+            "slider1": {
+                "prototype": "digit/ui/slider.reel",
                 "properties": {
-                    "element": {"#": "range1"}
+                    "element": {"#": "slider1"}
                 },
                 "bindings": {
                     "value": {"<->": "@number.value"}
                 }
             },
 
-            "range2": {
-                "prototype": "matte/ui/input-range.reel",
+            "slider2": {
+                "prototype": "digit/ui/slider.reel",
                 "properties": {
-                    "element": {"#": "range2"}
+                    "element": {"#": "slider2"}
                 },
                 "bindings": {
                     "value": {"<->": "@number.value"}
                 }
             }
         },
-        html: '<input type="number" data-montage-id="number">\n<input type="range" data-montage-id="range1" class="range1">\n<input type="range" data-montage-id="range2" class="range2">',
+        html: '<input type="number" data-montage-id="number">\n<input type="slider" data-montage-id="slider1" class="slider1">\n<input type="slider" data-montage-id="slider2" class="slider2">',
         javascript: ""
     },
     {
@@ -161,7 +161,7 @@ exports.examples = [
                     "element": {"#": "repetition"}
                 }
             },
-            "dynamicText": {
+            "text": {
                 "prototype": "montage/ui/text.reel",
                 "properties": {
                     "element": {"#": "text"}
@@ -197,7 +197,7 @@ exports.examples = [
             },
 
             "button": {
-                "prototype": "matte/ui/button.reel",
+                "prototype": "digit/ui/button.reel",
                 "properties": {
                     "element": {"#": "button"}
                 },
