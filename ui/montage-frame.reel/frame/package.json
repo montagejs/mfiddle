@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "mappings": {
         "montage" : "../../../node_modules/montage",
-        "matte" : "../../../node_modules/matte"
+        "matte" : "../../../node_modules/matte",
+        "digit" : "../../../node_modules/digit"
     }
 }
