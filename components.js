@@ -3,7 +3,7 @@ exports.components = [
         label: "Button", name: "button",
         x: 0, y: -76, left: 11,
         serialization: {
-            "prototype": "matte/ui/button.reel",
+            "prototype": "digit/ui/button.reel",
             "properties": {
                 "label": "Button",
                 "enabled": true
@@ -12,36 +12,23 @@ exports.components = [
         html: '<button data-montage-id=""></button>'
     },
     {
-        label: "Range", name: "range",
+        label: "Slider", name: "slider",
         x: -45, y: -76, width: 43, left: 13,
         serialization: {
-            "prototype": "matte/ui/input-range.reel",
+            "prototype": "digit/ui/slider.reel",
             "properties": {
                 "minValue": 0,
                 "maxValue": 100,
                 "value": 50
             }
         },
-        html: '<input type="range" data-montage-id="">'
-    },
-    {
-        label: "Toggle", name: "toggle",
-        x: 0, y: -99, left: 12,
-        serialization: {
-            "prototype": "matte/ui/toggle-button.reel",
-            "properties": {
-                "value": true,
-                "pressedLabel": "On",
-                "unpressedLabel": "Off"
-            }
-        },
-        html: '<button data-montage-id=""></button>'
+        html: '<input type="slider" data-montage-id="">'
     },
     {
         label: "Checkbox", name: "checkbox",
         x: -89, y: -76, left: 22, width: 24,
         serialization: {
-            "prototype": "matte/ui/input-checkbox.reel",
+            "prototype": "digit/ui/checkbox.reel",
             "properties": {
                 "checked": true
             }
@@ -49,18 +36,18 @@ exports.components = [
         html: '<input type="checkbox" data-montage-id="">'
     },
     {
-        label: "InputText", name: "inputText",
+        label: "TextField", name: "textField",
         x: -71, y: -101, left: 19,
         serialization: {
-            "prototype": "matte/ui/input-text.reel",
+            "prototype": "digit/ui/text-field.reel",
             "properties": {
                 "value": "Editable text"
             }
         },
-        html: '<input data-montage-id="" type="text">'
+        html: '<input data-montage-id="" type="textField">'
     },
     {
-        label: "DynamicText", name: "dynamicText",
+        label: "Text", name: "text",
         x: 0, y: -122, left: 20, width: 28,
         serialization: {
             "prototype": "montage/ui/text.reel",
@@ -76,7 +63,7 @@ exports.components = [
         serialization: {
             "prototype": "montage/ui/repetition.reel",
             "properties": {
-                "objects": [1, 2, 3]
+                "content": [1, 2, 3]
             }
         },
         html: '<ul data-montage-id=""><li>Item</li></ul>'
