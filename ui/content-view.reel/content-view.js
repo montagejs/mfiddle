@@ -29,13 +29,8 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 </copyright> */
 
-var Montage = require("montage").Montage,
-    Component = require("montage/ui/component").Component;
+var Component = require("montage/ui/component").Component;
 
-var ContentView = exports.ContentView = Montage.create(Component, {
-    draw: {
-        value: function() {
+exports.ContentView = Component.specialize({
 
-        }
-    }
 });

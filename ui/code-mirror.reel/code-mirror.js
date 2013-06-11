@@ -30,11 +30,8 @@ POSSIBILITY OF SUCH DAMAGE.
 </copyright> */
 /**
     @module "montage/ui/code-mirror.reel"
-    @requires montage
-    @requires montage/ui/component
 */
-var Montage = require("montage").Montage,
-    Component = require("montage/ui/component").Component,
+var Component = require("montage/ui/component").Component,
     CodeMirror = require("./codemirror/codemirror.min.js").CodeMirror;
 
 /**
@@ -42,7 +39,7 @@ var Montage = require("montage").Montage,
     @class module:"montage/ui/code-mirror.reel".CodeMirror
     @extends module:montage/ui/component.Component
 */
-exports.CodeMirror = Montage.create(Component, /** @lends module:"montage/ui/code-mirror.reel".CodeMirror# */ {
+exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mirror.reel".CodeMirror# */ {
     _codeMirror: {value: null},
     tabSize: {value: 4},
     indentUnit: {value: 4},

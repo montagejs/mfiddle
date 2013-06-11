@@ -33,7 +33,7 @@ var Montage = require("montage").Montage,
     Template = require("montage/core/template").Template,
     gist = require("gist").gist;
 
-exports.Mfiddle = Montage.create(Component, {
+exports.Mfiddle = Component.specialize({
     hasTemplate: {value: false},
     templateObjects: {value: {}},
     _componentId: {value: 1},

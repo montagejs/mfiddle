@@ -30,18 +30,15 @@ POSSIBILITY OF SUCH DAMAGE.
 </copyright> */
 /**
     @module "montage/ui/montage-frame.reel"
-    @requires montage
-    @requires montage/ui/component
 */
-var Montage = require("montage").Montage,
-    Component = require("montage/ui/component").Component;
+var Component = require("montage/ui/component").Component;
 
 /**
     Description TODO
     @class module:"ui/montage-frame.reel".MontageFrame
     @extends module:ui/component.Component
 */
-exports.MontageFrame = Montage.create(Component, /** @lends module:"montage/ui/montage-frame.reel".MontageFrame# */ {
+exports.MontageFrame = Component.specialize(/** @lends module:"montage/ui/montage-frame.reel".MontageFrame# */ {
     _css: {value: null},
     _serialization: {value: null},
     _html: {value: null},

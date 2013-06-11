@@ -30,18 +30,15 @@ POSSIBILITY OF SUCH DAMAGE.
 </copyright> */
 /**
     @module "montage/ui/component-button.reel"
-    @requires montage
-    @requires montage/ui/component
 */
-var Montage = require("montage").Montage,
-    Component = require("montage/ui/component").Component;
+var Component = require("montage/ui/component").Component;
 
 /**
     Description TODO
     @class module:"ui/component-button.reel".ComponentButton
     @extends module:ui/component.Component
 */
-exports.ComponentButton = Montage.create(Component, /** @lends module:"ui/component-button.reel".ComponentButton# */ {
+exports.ComponentButton = Component.specialize(/** @lends module:"ui/component-button.reel".ComponentButton# */ {
     component: {value: null},
     _iconStyle: {value: null},
 
