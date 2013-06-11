@@ -75,12 +75,14 @@ exports.Mfiddle = Component.specialize({
                     css = cssFile && cssFile.content,
                     html = htmlFile && htmlFile.content,
                     javascript = jsFile && jsFile.content,
-                    serialization;
+                    serialization,
+                    template;
 
                 if (html) {
+                    template = new Template();
                     // extract body and serialization
-                    htmlDocument = Template.createHtmlDocumentWithHtml(html);
-                    serialization = Template.getInlineObjectsString(htmlDocument);
+                    htmlDocument = template.createHtmlDocumentWithHtml(html);
+                    serialization = template.getInlineObjectsString(htmlDocument);
                     html = htmlDocument.body.innerHTML;
 
                     // clean up a bit
