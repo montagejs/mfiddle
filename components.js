@@ -44,7 +44,7 @@ exports.components = [
                 "value": "Editable text"
             }
         },
-        html: '<input data-montage-id="" type="textField">'
+        html: '<input data-montage-id="" type="text">'
     },
     {
         label: "Text", name: "text",
