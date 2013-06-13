@@ -50,9 +50,12 @@ exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mir
 
     enterDocument: {
         value: function(firstTime) {
+            var codeMirror,
+                mode;
+
             if (firstTime) {
-                var mode = this.mode === "json" ? {name: "javascript", json: true} : this.mode;
-                this._codeMirror = CodeMirror(this._element, {
+                mode = this.mode === "json" ? {name: "javascript", json: true} : this.mode;
+                codeMirror = this._codeMirror = CodeMirror(this._element, {
                     mode: mode,
                     tabSize: this.tabSize,
                     indentUnit: this.indentUnit,
@@ -60,6 +63,12 @@ exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mir
                     lineNumbers: this.lineNumbers,
                     value: this.value
                 });
+                this._newValue = null;
+                // lame way of getting around an issue of codemirror rendering
+                // itself incorrectly on first draw
+                setTimeout(function() {
+                    codeMirror.refresh();
+                }, 500);
             }
         }
     },
