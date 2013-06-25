@@ -17,8 +17,8 @@ exports.components = [
         serialization: {
             "prototype": "digit/ui/slider.reel",
             "properties": {
-                "minValue": 0,
-                "maxValue": 100,
+                "min": 0,
+                "max": 100,
                 "value": 50
             }
         },
