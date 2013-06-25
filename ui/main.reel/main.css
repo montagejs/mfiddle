@@ -38,7 +38,7 @@ html {
     left: 0;
     right: 0;
     height: 46px;
-    background: url(mfiddle-ui.png);
+    background: url(../../mfiddle-ui.png);
     border-bottom: 1px solid #3D3D3D;
     z-index: 9999;
 }
@@ -52,7 +52,7 @@ html {
     height: 27px;
     color: transparent;
     font-size: 1px;
-    background: url(mfiddle-ui.png);
+    background: url(../../mfiddle-ui.png);
     background-position: 0 -48px;
     background-repeat: no-repeat;
 }
@@ -63,7 +63,7 @@ html {
     top: -9px;
     width: 4px;
     height: 46px;
-    background: url(mfiddle-ui.png);
+    background: url(../../mfiddle-ui.png);
     background-position: -115px -101px;
     no-repeat;
 }
@@ -141,7 +141,7 @@ html {
     padding: 0;
     right: 0;
     height: 46px;
-    background: url(mfiddle-ui.png);
+    background: url(../../mfiddle-ui.png);
     z-index: 2;
 }
 #menu li {
@@ -157,7 +157,7 @@ html {
     top: 0;
     width: 4px;
     height: 46px;
-    background: url(mfiddle-ui.png) -115px -101px no-repeat;
+    background: url(../../mfiddle-ui.png) -115px -101px no-repeat;
 }
 .menu-button {
     position: relative;
@@ -198,7 +198,7 @@ html {
     padding: 0 12px 0 25px;
 }
 #run:after {
-    background: url(mfiddle-ui.png) 0 -147px no-repeat;
+    background: url(../../mfiddle-ui.png) 0 -147px no-repeat;
 }
 #examples {
     position: relative;
@@ -224,7 +224,7 @@ html {
     right: 11px;
     width: 10px;
     height: 10px;
-    background: url(mfiddle-ui.png) -9px -147px no-repeat;
+    background: url(../../mfiddle-ui.png) -9px -147px no-repeat;
 }
 #examples h2 {
     margin: 0;
