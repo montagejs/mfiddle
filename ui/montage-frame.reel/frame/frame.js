@@ -98,4 +98,10 @@ window.Frame = {
     }
 };
 
+// iOS has doesn't always fire requestAnimationFrame under an iFrame.
+// Resort to setTimeout as a workaround.
+if (/(iPad|iPhone|iPod).+OS 6/.test(window.navigator.userAgent)) {
+    rootComponent.requestAnimationFrame = null;
+}
+
 window.parent.postMessage("ready", "*");
