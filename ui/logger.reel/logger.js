@@ -33,6 +33,12 @@ var Component = require("montage/ui/component").Component;
 
 exports.Logger = Component.specialize({
 
+    constructor: {
+        value: function Logger() {
+            this.super();
+        }
+    },
+
     _scroller: {
         value: null
     },
