@@ -129,7 +129,6 @@ exports.Logger = Component.specialize({
 
     handleClearAction: {
         value: function(event) {
-            console.log("handleAction");
             this._value = "";
             this.needsDraw = true;
         }
