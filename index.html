@@ -37,7 +37,10 @@ POSSIBILITY OF SUCH DAMAGE.
     <script src="node_modules/montage/montage.js"></script>
     <script type="text/montage-serialization">{
         "owner": {
-            "prototype": "montage/ui/loader.reel"
+            "prototype": "montage/ui/loader.reel",
+            "properties": {
+                "element": {"#": "loader"}
+            }
         }
     }</script>
 </head>
@@ -45,5 +48,17 @@ POSSIBILITY OF SUCH DAMAGE.
     <div id="montage-app-bootstrapper">
         <img class="logo" src="logo.png" alt="logo" />
     </div>
+    <div data-montage-id="loader"></div>
+    <!-- Google -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-35717912-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
 </body>
 </html>
