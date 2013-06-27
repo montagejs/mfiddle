@@ -32,7 +32,7 @@ POSSIBILITY OF SUCH DAMAGE.
     @module "montage/ui/code-mirror.reel"
 */
 var Component = require("montage/ui/component").Component,
-    CodeMirror = require("./codemirror/codemirror.min.js").CodeMirror;
+    CodeMirror = require("./codemirror/codemirror-min").CodeMirror;
 
 /**
     Description TODO
