@@ -4,7 +4,7 @@
     "dependencies": {
         "montage" : "~0.13.0",
         "matte" : "~0.1.1",
-        "digit" : "~0.1.1"
+        "digit" : "~0.2.0"
     },
     "repository": {
         "type": "git",
