@@ -64,11 +64,19 @@ exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mir
                     value: this.value
                 });
                 this._newValue = null;
-                // lame way of getting around an issue of codemirror rendering
-                // itself incorrectly on first draw
-                setTimeout(function() {
-                    codeMirror.refresh();
-                }, 500);
+
+                // HACK need to wait until the styling affects the element in
+                // order to ask codemirror to recalculate its size correctly.
+                var element = this.element,
+                    parentElement = this.ownerComponent.element.parentElement;
+
+                setTimeout(function styleChecker() {
+                    if (getComputedStyle(element).width === getComputedStyle(parentElement).width) {
+                        setTimeout(styleChecker, 50);
+                    } else {
+                        codeMirror.refresh();
+                    }
+                }, 0);
             }
         }
     },
