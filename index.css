@@ -4,14 +4,15 @@
     color: white;
     text-align: center;
     font: 30px/1.8em "Lucida Grande", Lucida, Verdana, sans-serif;
+    background-color: white;
+    padding-bottom: 100%;
 }
 
-.logo-bootstrapper {
-    height: 30px; /* Half of real size -> Retina */
+.logo {
+    width: 374px;
 }
 
 .montage-app-bootstrapping #montage-app-bootstrapper,
-.montage-app-loading #montage-app-bootstrapper,
-.montage-app-loading #montage-app-loader {
+.montage-app-loaded #montage-app-bootstrapper {
     display: block;
 }

@@ -380,3 +380,7 @@ div.CodeMirror, div.CodeMirror-scroll {
     border: 1px solid grey;
     color: black !important;
 }
+
+.montage-app-bootstrapping .montage-app-loading #montage-app-bootstrapper {
+    display: none;
+}
