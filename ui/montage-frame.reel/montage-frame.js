@@ -119,7 +119,7 @@ exports.MontageFrame = Component.specialize(/** @lends module:"montage/ui/montag
 
                 this._iframeWindow.Frame.reset();
                 this._cssElement.textContent = this._css;
-                this._serializationElement.textContent = this._serialization;
+                this._serializationElement.textContent = this._serialization || "{}";
                 this._javascriptElement.textContent = this._javascript;
                 this._iframeDocument.body.innerHTML = this._html;
                 this._iframeWindow.Frame.boot();
