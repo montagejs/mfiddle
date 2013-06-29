@@ -37,7 +37,7 @@ exports.components = [
     },
     {
         label: "TextField", name: "textField",
-        x: -71, y: -101, left: 19,
+        x: -69, y: -101, left: 14,
         serialization: {
             "prototype": "digit/ui/text-field.reel",
             "properties": {
@@ -48,7 +48,7 @@ exports.components = [
     },
     {
         label: "Text", name: "text",
-        x: 0, y: -122, left: 20, width: 28,
+        x: -37, y: -50, left: 12, width: 44,
         serialization: {
             "prototype": "montage/ui/text.reel",
             "properties": {

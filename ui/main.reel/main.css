@@ -52,9 +52,8 @@ html {
     height: 27px;
     color: transparent;
     font-size: 1px;
-    background: url(../../mfiddle-ui.png);
-    background-position: 0 -48px;
-    background-repeat: no-repeat;
+    background: url(../../logo.png);
+    background-size: 119px 27px;
 }
 #logo:after {
     content: "";
