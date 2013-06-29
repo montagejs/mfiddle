@@ -69,11 +69,8 @@ exports.Main = Component.specialize({
         value: function(id) {
             var self = this;
 
-            gist.load(id, null, function(settings, cssFile, htmlFile, jsFile) {
+            gist.load(id, null, function(settings, css, html, javascript) {
                 var htmlDocument,
-                    css = cssFile && cssFile.content,
-                    html = htmlFile && htmlFile.content,
-                    javascript = jsFile && jsFile.content,
                     serialization,
                     template;
 

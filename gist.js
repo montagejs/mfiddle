@@ -129,6 +129,7 @@ var gist = exports.gist = {
             cssCode = options.cssCode,
             htmlMarkup = options.htmlMarkup,
             jsCode = options.jsCode,
+            settings = options.settings,
             title = "title",
             files = {};
 
@@ -141,7 +142,7 @@ var gist = exports.gist = {
         if (jsCode) {
             files["component.js"] = {"content": jsCode};
         }
-        files["settings.json"] = {"content": JSON.stringify({})};
+        files["settings.json"] = {"content": JSON.stringify(settings)};
 
         gist.request({
             anon: options.anon,
@@ -197,7 +198,11 @@ var gist = exports.gist = {
                 var cssFile = files['component.css'],
                     htmlFile = files['component.html'],
                     jsFile = files['component.js'],
-                    settings = files['settings.json'];
+                    settingsFile = files['settings.json'],
+                    css,
+                    html,
+                    javascript,
+                    settings;
 
                 if(!cssFile || !htmlFile || !jsFile) {
                     for(var filename in files) {
@@ -221,8 +226,29 @@ var gist = exports.gist = {
                     }
                 }
 
+                if (cssFile) {
+                    css = cssFile.content;
+                }
+                if (htmlFile) {
+                    html = htmlFile.content;
+                }
+                if (jsFile) {
+                    javascript = jsFile.content;
+                }
+
+                if (settingsFile) {
+                    try {
+                        settings = JSON.parse(settingsFile.content);
+                    } catch (ex) {
+                        console.warn("Unknown settings: " , settingsFile);
+                        settings = {};
+                    }
+                } else {
+                    settings = {};
+                }
+
                 if (callback) {
-                    callback(settings, cssFile, htmlFile, jsFile);
+                    callback(settings, css, html, javascript);
                 }
             }
         });
