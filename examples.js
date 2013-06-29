@@ -17,7 +17,7 @@ exports.examples = [
             }
         },
         html: '<div data-montage-id="component">\n\t<button data-montage-id="button"></button>\n</div>',
-        javascript: 'Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    templateDidLoad: {\n        value: function() {\n            console.log("templateDidLoad");\n        }\n    }\n});\n'
+        javascript: 'var Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    templateDidLoad: {\n        value: function() {\n            console.log("templateDidLoad");\n        }\n    }\n});\n'
     },
     {
         label: "A simple Button",
@@ -82,7 +82,7 @@ exports.examples = [
             }
         },
         html: '<div data-montage-id="component">\n	<button data-montage-id="button"></button>\n</div>',
-        javascript: 'Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    handleButtonAction: {\n        value: function() {\n            console.log("action!");\n        }\n    }\n});\n'
+        javascript: 'var Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    handleButtonAction: {\n        value: function() {\n            console.log("action!");\n        }\n    }\n});\n'
     },
     {
         label: "A simple Condition",
@@ -113,7 +113,7 @@ exports.examples = [
             }
         },
         html: '<div data-montage-id="component">\n	<label><input type="checkbox" data-montage-id="toggle">Show</label>\n    <div data-montage-id="block">\n        <h2>Hello There!</h2>\n    </div>\n</div>',
-        javascript: 'Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n});\n'
+        javascript: 'var Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n});\n'
     },
     {
         label: "Two way Bindings",
@@ -211,6 +211,6 @@ exports.examples = [
             }
         },
         html: '<div data-montage-id="owner">\n    <ul data-montage-id="repetition">\n        <button data-montage-id="button"></button>\n    </ul>\n</div>',
-        javascript: 'Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    handleAction: {\n        value: function(event) {\n            console.log("action: " + event.target.element.textContent);\n        }\n    }\n});\n'
+        javascript: 'var Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    handleAction: {\n        value: function(event) {\n            console.log("action: " + event.target.element.textContent);\n        }\n    }\n});\n'
     }
 ];
