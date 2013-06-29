@@ -1,6 +1,6 @@
 {
     "name": "mfiddle",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "dependencies": {
         "montage" : "~0.13.0",
         "matte" : "~0.1.1",

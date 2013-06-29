@@ -31,7 +31,9 @@ popd
 # Clone gh-pages branch and clean it up for the new build
 mkdir -p "$DEPLOY_DIR"
 git clone --branch gh-pages "$GIT_REPO" "$DEPLOY_DIR"
-rm -rf "$DEPLOY_DIR"/*
+# Remove the entire contents except v0 and .git related files
+#rm -rf "$DEPLOY_DIR"/*
+find "$DEPLOY_DIR" ! -name '.git*' ! -name 'v0' -maxdepth 1 -mindepth 1 -exec rm -rf \{\} \;
 
 # Move the mopped version into the gh-pages branch
 mv "$OUT_DIR/builds/mfiddle"/* "$DEPLOY_DIR"
