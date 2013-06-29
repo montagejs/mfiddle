@@ -36,7 +36,7 @@ exports.examples = [
     },
     {
         label: "A simple Binding",
-        css: ".slider {\n    width: 100%;\n}",
+        css: ".slider {\n    width: 50%;\n}",
         serialization: {
             "slider": {
                 "prototype": "digit/ui/slider.reel",
@@ -117,7 +117,7 @@ exports.examples = [
     },
     {
         label: "Two way Bindings",
-        css: ".slider2 {\n    width: 100%;\n}",
+        css: ".slider2 {\n    width: 50%;\n}",
         serialization: {
             "number": {
                 "prototype": "digit/ui/number-field.reel",
@@ -147,7 +147,7 @@ exports.examples = [
                 }
             }
         },
-        html: '<input type="number" data-montage-id="number">\n<input type="slider" data-montage-id="slider1" class="slider1">\n<input type="slider" data-montage-id="slider2" class="slider2">',
+        html: '<p>\n    <input type="number" data-montage-id="number">\n    <input type="slider" data-montage-id="slider1" class="slider1">\n</p>\n<p>\n    <input type="slider" data-montage-id="slider2" class="slider2">\n</p>',
         javascript: ""
     },
     {
