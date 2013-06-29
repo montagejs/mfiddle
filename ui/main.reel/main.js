@@ -33,6 +33,8 @@ var Montage = require("montage").Montage,
     Template = require("montage/core/template").Template,
     gist = require("gist").gist;
 
+var VERSION = 1;
+
 exports.Main = Component.specialize({
     templateObjects: {value: {}},
     _componentId: {value: 1},
@@ -73,6 +75,11 @@ exports.Main = Component.specialize({
                 var htmlDocument,
                     serialization,
                     template;
+
+                if (settings.version !== VERSION) {
+                    self.redirectToVersion(settings.version, id);
+                    return;
+                }
 
                 if (html) {
                     template = new Template();
@@ -139,6 +146,20 @@ exports.Main = Component.specialize({
             this._addHtml(component.html.replace('data-montage-id=""', 'data-montage-id="' + id + '"'));
 
             this.executeFiddle();
+        }
+    },
+
+    redirectToVersion: {
+        value: function(version, gistId) {
+            var href;
+
+            if (!version) {
+                version = 0;
+            }
+
+            href = window.location.href.slice(0, -window.location.hash.length) +
+                    "v" + version + "/#!/" + gistId;
+            window.location.href = href;
         }
     },
 
@@ -300,7 +321,10 @@ exports.Main = Component.specialize({
                 anon: true,
                 cssCode: this.templateObjects.cssCodeMirror.value,
                 htmlMarkup: this._generateHtmlPage(),
-                jsCode: this.templateObjects.javascriptCodeMirror.value
+                jsCode: this.templateObjects.javascriptCodeMirror.value,
+                settings: {
+                    version: 1
+                }
             });
         }
     },
