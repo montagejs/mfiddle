@@ -39,7 +39,13 @@ var Component = require("montage/ui/component").Component;
     @extends module:montage/ui/component.Component
 */
 exports.ExampleButton = Component.specialize(/** @lends module:"ui/example-button.reel".ExampleButton# */ {
-    example: {value: false},
+    hasTemplate: {
+        value: false
+    },
+
+    example: {
+        value: false
+    },
 
     enterDocument: {
         value: function(firstTime) {
