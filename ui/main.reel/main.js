@@ -101,18 +101,10 @@ exports.Main = Component.specialize({
 
     loadFiddle: {
         value: function(css, serialization, html, javascript) {
-            if (css != null) {
-                this.templateObjects.cssCodeMirror.value = css;
-            }
-            if (serialization != null) {
-                this.templateObjects.serializationCodeMirror.value = serialization;
-            }
-            if (html != null) {
-                this.templateObjects.htmlCodeMirror.value = html;
-            }
-            if (javascript != null) {
-                this.templateObjects.javascriptCodeMirror.value = javascript;
-            }
+            this.templateObjects.cssCodeMirror.value = css || "";
+            this.templateObjects.serializationCodeMirror.value = serialization || "";
+            this.templateObjects.htmlCodeMirror.value = html || "";
+            this.templateObjects.javascriptCodeMirror.value = javascript || "";
         }
     },
 
@@ -217,7 +209,7 @@ exports.Main = Component.specialize({
                 html += "\n" + htmlPiece;
             }
 
-            this.loadFiddle(null, null, html, null);
+            htmlCodeMirror.value = html;
         }
     },
 
@@ -237,7 +229,7 @@ exports.Main = Component.specialize({
                 this._logger.log("Add component warning: The serialization seems to be invalid, appending component at the end.");
             }
 
-            this.loadFiddle(null, serialization, null, null);
+            this.templateObjects.serializationCodeMirror.value = serialization;
         }
     },
 
