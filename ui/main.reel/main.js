@@ -157,14 +157,9 @@ exports.Main = Component.specialize({
 
     clear: {
         value: function() {
-            var templateObjects = this.templateObjects;
-
-            templateObjects.cssCodeMirror.value = "";
-            templateObjects.serializationCodeMirror.value = "";
-            templateObjects.htmlCodeMirror.value = "";
-            templateObjects.javascriptCodeMirror.value = "";
-
             location.hash = "";
+            this.loadFiddle("", "", "", "");
+            this.executeFiddle();
         }
     },
 
