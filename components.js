@@ -1,7 +1,7 @@
 exports.components = [
     {
         label: "Button", name: "button",
-        x: 0, y: -76, left: 11,
+        x: 0, y: -76, left: 12, width: 45,
         serialization: {
             "prototype": "digit/ui/button.reel",
             "properties": {
@@ -13,7 +13,7 @@ exports.components = [
     },
     {
         label: "Slider", name: "slider",
-        x: -45, y: -76, width: 43, left: 13,
+        x: -46, y: -76, width: 43, left: 12,
         serialization: {
             "prototype": "digit/ui/slider.reel",
             "properties": {
