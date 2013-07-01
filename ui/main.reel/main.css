@@ -143,7 +143,7 @@ html {
     background: url(../../mfiddle-ui.png);
     z-index: 2;
 }
-#menu li {
+#menu > li {
     margin: 0;
     padding: 0;
     float: left;
@@ -244,7 +244,7 @@ html {
     border: 2px solid #11BDFB;
     background-color: #404040;
     margin: 0;
-    padding: 0 17px;
+    padding: 0 0;
     -webkit-box-shadow: 0 1px 7px rgba(0,0,0,.4);
     visibility: hidden;
     opacity: 0;
@@ -252,15 +252,12 @@ html {
 }
 #examples:hover ul {
     visibility: visible;
-    display: block;
     opacity: 1;
 }
 #examples li {
     width: 100%;
     background: none;
     border: none;
-    margin: 0 -17px;
-    padding: 0 17px;
     color: white;
     font-size: 14px;
     font-family: Helvetica, Arial, sans-serif;
@@ -276,6 +273,16 @@ html {
     background: #287F9E;
     border-top: 1px solid #227897;
     border-bottom: 1px solid #227897;
+}
+.exampleButtons {
+    position: relative;
+}
+
+.exampleButtons .example-button {
+    display: inline-block;
+    padding: 0 17px;
+    width: 100%;
+    box-sizing: border-box;
 }
 #css {
     position: absolute;
