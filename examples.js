@@ -1,6 +1,6 @@
 exports.examples = [
     {
-        label: "A simple Component",
+        label: "Simple component",
         css: "",
         serialization: {
             "owner": {
@@ -20,7 +20,7 @@ exports.examples = [
         javascript: 'var Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    templateDidLoad: {\n        value: function() {\n            console.log("templateDidLoad");\n        }\n    }\n});\n'
     },
     {
-        label: "A simple Button",
+        label: "Simple button",
         css: "",
         serialization: {
             "button": {
@@ -35,7 +35,7 @@ exports.examples = [
         javascript: ""
     },
     {
-        label: "A simple Binding",
+        label: "Simple binding",
         css: ".slider {\n    width: 50%;\n}",
         serialization: {
             "slider": {
@@ -60,7 +60,7 @@ exports.examples = [
         javascript: ""
     },
     {
-        label: "A simple Listener",
+        label: "Simple listener",
         css: "",
         serialization: {
             "owner": {
@@ -85,7 +85,7 @@ exports.examples = [
         javascript: 'var Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n    handleButtonAction: {\n        value: function() {\n            console.log("action!");\n        }\n    }\n});\n'
     },
     {
-        label: "A simple Condition",
+        label: "Simple condition",
         css: "",
         serialization: {
             "owner": {
@@ -116,7 +116,7 @@ exports.examples = [
         javascript: 'var Component = require("montage/ui/component").Component;\n\nexports.Owner = Component.specialize({\n});\n'
     },
     {
-        label: "Two way Bindings",
+        label: "Two-way bindings",
         css: ".slider2 {\n    width: 50%;\n}",
         serialization: {
             "number": {
@@ -151,7 +151,7 @@ exports.examples = [
         javascript: ""
     },
     {
-        label: "Accessing Repetition objects",
+        label: "Accessing repetition objects",
         css: "",
         serialization: {
             "repetition": {
@@ -175,7 +175,7 @@ exports.examples = [
         javascript: ""
     },
     {
-        label: "Listening on repeated Buttons",
+        label: "Listening on repeated buttons",
         css: "",
         serialization: {
             "owner": {
