@@ -45,8 +45,30 @@ exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mir
     indentUnit: {value: 4},
     matchBrackets: {value: false},
     lineNumbers: {value: false},
-    mode: {value: null},
     _newValue: {value: null},
+
+    _mode: {
+        value: null
+    },
+
+    mode: {
+        set: function(value) {
+            this._mode = value;
+            if (this._codeMirror) {
+                if (value == "json") {
+                    this._codeMirror.setOption("mode", {
+                        name: "javascript",
+                        json: true
+                    });
+                } else {
+                    this._codeMirror.setOption("mode", value);
+                }
+            }
+        },
+        get: function() {
+            return this._mode;
+        }
+    },
 
     enterDocument: {
         value: function(firstTime) {
