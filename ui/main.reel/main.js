@@ -201,7 +201,7 @@ exports.Main = Component.specialize({
             }
 
             if (addHtmlAtTheEnd) {
-                html += "\n" + htmlPiece;
+                html += (html ? "\n" : "") + htmlPiece;
             }
 
             htmlCodeMirror.value = html;
@@ -211,7 +211,8 @@ exports.Main = Component.specialize({
     _addSerialization: {
         value: function(label, serializationPiece) {
             var serialization,
-                serializationObject = this._getSerializationObject();
+                serializationObject = this._getSerializationObject(),
+                currentSerialization = this.templateObjects.serializationCodeMirror.value;
 
             if (serializationObject) {
                 serializationObject[label] = serializationPiece;
@@ -219,9 +220,11 @@ exports.Main = Component.specialize({
             } else {
                 serializationObject = {};
                 serializationObject[label] = serializationPiece;
-                serialization = this.templateObjects.serializationCodeMirror.value + "\n" + this._stringifySerialization(serializationPiece);
+                serialization = this.templateObjects.serializationCodeMirror.value + (currentSerialization ? "\n" : "") + this._stringifySerialization(serializationObject);
 
-                this._logger.log("Add component warning: The serialization seems to be invalid, appending component at the end.");
+                if (currentSerialization) {
+                    this._logger.log("Add component warning: The serialization seems to be invalid, appending component at the end.");
+                }
             }
 
             this.templateObjects.serializationCodeMirror.value = serialization;
