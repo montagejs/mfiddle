@@ -1,0 +1,1 @@
+montageDefine("7892c9a","lib/_stream_passthrough",{dependencies:["./_stream_transform","util"],factory:function(e,t,n){function a(e){return this instanceof a?(i.call(this,e),void 0):new a(e)}n.exports=a;var i=e("./_stream_transform"),r=e("util");r.inherits(a,i),a.prototype._transform=function(e,t,n){n(null,e)}}});

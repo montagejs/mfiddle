@@ -1,0 +1,1 @@
+montageDefine("323c0c1","ui/notification.reel/notification",{dependencies:["montage/core/core","montage/ui/component"],factory:function(e,t){var n=e("montage/core/core").Montage,i=e("montage/ui/component").Component;t.Notification=n.create(i,{})}});

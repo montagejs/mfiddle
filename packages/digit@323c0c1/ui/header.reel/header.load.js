@@ -1,0 +1,1 @@
+montageDefine("323c0c1","ui/header.reel/header",{dependencies:["montage/core/core","montage/ui/component"],factory:function(e,t){var n=e("montage/core/core").Montage,i=e("montage/ui/component").Component;t.Header=n.create(i,{})}});

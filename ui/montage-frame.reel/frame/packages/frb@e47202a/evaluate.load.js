@@ -1,0 +1,1 @@
+montageDefine("e47202a","evaluate",{dependencies:["./parse","./compile-evaluator","./scope"],factory:function(t,e,n){function i(t,e,n,i,o){var l;l="string"==typeof t?a(t):t;var c=r(l);return c(new s(e,null,n,i,o))}var a=t("./parse"),r=t("./compile-evaluator"),s=t("./scope");n.exports=i}});
