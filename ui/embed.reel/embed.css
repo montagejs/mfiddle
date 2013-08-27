@@ -1,0 +1,51 @@
+.mfiddle-Embed {
+
+}
+
+.mfiddle-Embed-tabs {
+    border-bottom: 1px solid gray;
+}
+
+.mfiddle-Embed-tab.matte-Button {
+    position: relative;
+    left: 40px;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    padding: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: transparent;
+
+    height: auto;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
+    border: 1px solid transparent;
+}
+
+.mfiddle-Embed-tab.matte-Button:hover {
+    border: 1px solid gray;
+}
+
+.mfiddle-Embed-tab.matte-Button.mfiddle-Embed-tab--selected {
+    border: 1px solid gray;
+    border-bottom-color: white;
+    background-color: white;
+}
+
+.mfiddle-Embed-mfiddle {
+    float: right;
+}
+
+.mfiddle-Embed-content {
+    position: relative;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    height: 100%;
+    min-width: 300px;
+    min-height: 200px;
+
+    background-color:white;
+}

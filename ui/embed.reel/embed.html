@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="embed.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "embed"}
+            }
+        },
+        "anchor1": {
+            "prototype": "matte/ui/anchor.reel",
+            "properties": {
+                "element": {"#": "anchor"},
+                "textContent": "edit in MFiddle"
+            },
+            "bindings": {
+                "href": {"<-": "@owner.mfiddleUrl + '#!/' + @owner.fiddle.id"}
+            }
+        },
+        "content": {
+            "prototype": "ui/code-mirror.reel",
+            "properties": {
+                "element": {"#": "content"},
+                "lineNumbers": true,
+                "matchBrackets": true,
+                "mode": "json"
+            },
+            "bindings": {
+                "mode": {"<-": "@owner.activeTab == 'html' ? 'htmlmixed' : (@owner.activeTab == 'serialization' ? 'json' : @owner.activeTab)"}
+            }
+        },
+        "cssTab": {
+            "prototype": "matte/ui/button.reel",
+            "properties": {
+                "element": {"#": "cssTab"},
+                "enabled": true,
+                "label": "CSS"
+            },
+            "bindings": {
+                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'css'"}
+            }
+        },
+        "htmlTab": {
+            "prototype": "matte/ui/button.reel",
+            "properties": {
+                "element": {"#": "htmlTab"},
+                "enabled": true,
+                "label": "HTML"
+            },
+            "bindings": {
+                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'html'"}
+            }
+        },
+        "javascriptTab": {
+            "prototype": "matte/ui/button.reel",
+            "properties": {
+                "element": {"#": "javascriptTab"},
+                "enabled": true,
+                "label": "JavaScript"
+            },
+            "bindings": {
+                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'javascript'"}
+            }
+        },
+        "serializationTab": {
+            "prototype": "matte/ui/button.reel",
+            "properties": {
+                "element": {"#": "serializationTab"},
+                "enabled": true,
+                "label": "Serialization"
+            },
+            "bindings": {
+                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'serialization'"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="embed" class="mfiddle-Embed">
+        <div class="mfiddle-Embed-tabs">
+            <span class="mfiddle-Embed-tab" data-montage-id="serializationTab"></span>
+            <span class="mfiddle-Embed-tab" data-montage-id="htmlTab"></span>
+            <span class="mfiddle-Embed-tab" data-montage-id="javascriptTab"></span>
+            <span class="mfiddle-Embed-tab" data-montage-id="cssTab"></span>
+            <a data-montage-id="anchor" href=""
+               class="mfiddle-Embed-mfiddle"></a>
+        </div>
+        <div data-montage-id="content" class="mfiddle-Embed-content"></div>
+    </div>
+</body>
+</html>
