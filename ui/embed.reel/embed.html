@@ -36,11 +36,13 @@
             "prototype": "matte/ui/button.reel",
             "properties": {
                 "element": {"#": "cssTab"},
-                "enabled": true,
-                "label": "CSS"
+                "identifier": "tab",
+                "label": "CSS",
+                "type": "button"
             },
             "bindings": {
-                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'css'"}
+                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'css'"},
+                "detail.get('tab')": {"<-": "'css'"}
             }
         },
         "htmlTab": {
@@ -48,10 +50,12 @@
             "properties": {
                 "element": {"#": "htmlTab"},
                 "enabled": true,
+                "identifier": "tab",
                 "label": "HTML"
             },
             "bindings": {
-                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'html'"}
+                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'html'"},
+                "detail.get('tab')": {"<-": "'html'"}
             }
         },
         "javascriptTab": {
@@ -59,10 +63,12 @@
             "properties": {
                 "element": {"#": "javascriptTab"},
                 "enabled": true,
+                "identifier": "tab",
                 "label": "JavaScript"
             },
             "bindings": {
-                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'javascript'"}
+                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'javascript'"},
+                "detail.get('tab')": {"<-": "'javascript'"}
             }
         },
         "serializationTab": {
@@ -70,10 +76,12 @@
             "properties": {
                 "element": {"#": "serializationTab"},
                 "enabled": true,
+                "identifier": "tab",
                 "label": "Serialization"
             },
             "bindings": {
-                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'serialization'"}
+                "classList.has('mfiddle-Embed-tab--selected')": {"<-": "@owner.activeTab == 'serialization'"},
+                "detail.get('tab')": {"<-": "'serialization'"}
             }
         }
     }

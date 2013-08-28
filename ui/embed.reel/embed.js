@@ -122,27 +122,9 @@ exports.Embed = Component.specialize(/** @lends Embed# */ {
 
     // Handle functions
 
-    handleHtmlTabAction: {
-        value: function() {
-            this.activeTab = "html";
-        }
-    },
-
-    handleSerializationTabAction: {
-        value: function() {
-            this.activeTab = "serialization";
-        }
-    },
-
-    handleCssTabAction: {
-        value: function() {
-            this.activeTab = "css";
-        }
-    },
-
-    handleJavascriptTabAction: {
-        value: function() {
-            this.activeTab = "javascript";
+    handleTabAction: {
+        value: function(event) {
+            this.activeTab = event.detail.get("tab");
         }
     }
 });
