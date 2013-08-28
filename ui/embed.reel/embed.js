@@ -20,6 +20,22 @@ exports.Embed = Component.specialize(/** @lends Embed# */ {
         value: "http://montagejs.github.io/mfiddle/"
     },
 
+    _id: {
+        value: null
+    },
+
+    id: {
+        set: function(value) {
+            if (this._id !== value) {
+                this._id = value;
+                this.loadGist(value);
+            }
+        },
+        get: function() {
+            return this._id;
+        }
+    },
+
     _fiddle: {
         value: null
     },
