@@ -3,8 +3,7 @@
  * @requires montage/ui/component
  */
 var Component = require("montage/ui/component").Component,
-    Template = require("montage/core/template").Template,
-    gist = require("gist").gist;
+    Fiddle = require("core/fiddle").Fiddle;
 
 /**
  * @class Embed
@@ -62,36 +61,8 @@ exports.Embed = Component.specialize(/** @lends Embed# */ {
         value: function(id) {
             var self = this;
 
-            gist.load(id, null, function(settings, css, html, javascript) {
-                var htmlDocument,
-                    serialization,
-                    template;
-
-                //if (settings.version !== VERSION) {
-                //    self.redirectToVersion(settings.version, id);
-                //    return;
-                //}
-
-                if (html) {
-                    template = new Template();
-                    // extract body and serialization
-                    htmlDocument = template.createHtmlDocumentWithHtml(html);
-                    serialization = template.getInlineObjectsString(htmlDocument);
-                    html = htmlDocument.body.innerHTML;
-
-                    // clean up a bit
-                    serialization = serialization.replace(/\n    /g, "\n");
-                    html = html.replace(/\n    /g, "\n").replace(/^\s*\n|\n\s*$/g, "");
-                }
-
-                self.fiddle = {
-                    id: id,
-                    css: css,
-                    serialization: serialization,
-                    html: html,
-                    javascript: javascript
-                };
-                //self.executeFiddle();
+            Fiddle.fromId(id).then(function(fiddle) {
+                self.fiddle = fiddle;
             });
         }
     },
