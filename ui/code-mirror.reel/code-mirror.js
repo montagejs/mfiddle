@@ -45,6 +45,7 @@ exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mir
     indentUnit: {value: 4},
     matchBrackets: {value: false},
     lineNumbers: {value: false},
+    readOnly: {value: false},
     _newValue: {value: null},
 
     _mode: {
@@ -83,6 +84,7 @@ exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mir
                     indentUnit: this.indentUnit,
                     matchBrackets: this.matchBracket,
                     lineNumbers: this.lineNumbers,
+                    readOnly: this.readOnly,
                     value: this.value
                 });
                 this._newValue = null;
