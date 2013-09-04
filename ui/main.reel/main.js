@@ -314,6 +314,13 @@ exports.Main = Component.specialize({
                 jsCode: this.templateObjects.javascriptCodeMirror.value,
                 settings: {
                     version: 1
+                },
+                callback: function(id, rev) {
+                    if (rev) {
+                        location.hash = "!/" + id + "/" + rev;
+                    } else {
+                        location.hash = "!/" + id;
+                    }
                 }
             });
         }

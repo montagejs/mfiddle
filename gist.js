@@ -261,13 +261,9 @@ var gist = exports.gist = {
         if(gist.id != id) {
             gist.id = id;
             gist.rev = undefined;
-
-            location.hash = "!/" + id;
         }
         else if(gist.rev && gist.rev !== rev) {
             gist.rev = rev;
-
-            location.hash = "!/" + id + "/" + rev;
         }
 
         if(data.user) {
