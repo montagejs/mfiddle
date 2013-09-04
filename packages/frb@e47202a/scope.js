@@ -1,1 +1,1 @@
-function Scope(e,t,n,i,a,r){this.value=e,this.parent=t,this.parameters=n,this.document=i,this.components=a,this.beforeChange=r}module.exports=Scope,Scope.nest=function(e,t){return e=e||new Scope,new Scope(t,e,e.parameters,e.document,e.components,e.beforeChange)};
+function Scope(e,t,n,r,i,a){this.value=e,this.parent=t,this.parameters=n,this.document=r,this.components=i,this.beforeChange=a}module.exports=Scope,Scope.nest=function(e,t){return e=e||new Scope,new Scope(t,e,e.parameters,e.document,e.components,e.beforeChange)};

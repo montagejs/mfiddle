@@ -1,1 +1,1 @@
-montageDefine("c0d90b0","ui/progress.reel/progress",{dependencies:["ui/native-control"],factory:function(t,e){var n=t("ui/native-control").NativeControl,i=e.Progress=n.specialize({});i.addAttributes({form:null,max:{dataType:"number"},value:{dataType:"number"}})}});
+montageDefine("c0d90b0","ui/progress.reel/progress",{dependencies:["ui/native-control"],factory:function(e,t){var n=e("ui/native-control").NativeControl,i=t.Progress=n.specialize({});i.addAttributes({form:null,max:{dataType:"number"},value:{dataType:"number"}})}});

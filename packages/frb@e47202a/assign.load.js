@@ -1,1 +1,1 @@
-montageDefine("e47202a","assign",{dependencies:["./parse","./compile-assigner","./scope"],factory:function(t,e,n){function i(t,e,n,i,o,l){var c;c="string"==typeof e?a(e):e;var h=r(c);return h(n,new s(t,null,i,o,l))}var a=t("./parse"),r=t("./compile-assigner"),s=t("./scope");n.exports=i}});
+montageDefine("e47202a","assign",{dependencies:["./parse","./compile-assigner","./scope"],factory:function(e,t,n){function i(e,t,n,i,s,l){var u;u="string"==typeof t?r(t):t;var c=a(u);return c(n,new o(e,null,i,s,l))}var r=e("./parse"),a=e("./compile-assigner"),o=e("./scope");n.exports=i}});

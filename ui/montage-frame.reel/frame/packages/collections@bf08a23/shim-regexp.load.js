@@ -1,1 +1,1 @@
-montageDefine("bf08a23","shim-regexp",{dependencies:[],factory:function(){if(!RegExp.escape){var t=/[-[\]{}()*+?.\\^$|,#\s]/g;RegExp.escape=function(e){return e.replace(t,"\\$&")}}}});
+montageDefine("bf08a23","shim-regexp",{dependencies:[],factory:function(){if(!RegExp.escape){var e=/[-[\]{}()*+?.\\^$|,#\s]/g;RegExp.escape=function(t){return t.replace(e,"\\$&")}}}});

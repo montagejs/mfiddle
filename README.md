@@ -1,18 +1,12 @@
-Sample Montage application
-===============
+MFiddle
+=======
 
-This application is an example of how a Montage application can be structured and implemented.
+MFiddle is hosted at http://montagejs.github.io/mfiddle/.
 
-This application depends on the Montage framework which isn't included in the repository. There are two easy ways to
-install the Montage framework so that it can be loaded by this application.
+Features
 
-If you have npm installed already simply type
-```
-npm install
-```
-
-If do not have npm you can use assist.sh script. This will download montage as a sibling to your application's directory
-and create a symlink in the node_modules directory of the application.
-```
-./assist.sh link montage
-```
+- Edit HTML, CSS, Javascript & the Montage serialization and see the results live
+- Load examples of common patterns in Montage to see how they work
+- Play with all the features of Montage without having to set up a project
+- Use [Digit](http://montagejs.org/docs/theme-digit-components.html) components in the examples
+- Save the results to Gists for sharing with others

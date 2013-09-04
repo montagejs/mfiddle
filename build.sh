@@ -6,7 +6,7 @@ ROOT_DIR="$(dirname ${BASH_SOURCE[0]})"
 OUT_DIR="$ROOT_DIR/generated"
 DEPLOY_DIR="$ROOT_DIR/deploy"
 MASTER_HASH="$(git rev-parse --short HEAD)"
-GIT_REPO="git@github.com:aadsm/mfiddle.git"
+GIT_REPO="git@github.com:montagejs/mfiddle.git"
 
 if [ -e "$DEPLOY_DIR" ]; then
     echo "Error: $DEPLOY_DIR exists, please remove it before continue."

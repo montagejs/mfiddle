@@ -1,1 +1,1 @@
-if(!RegExp.escape){var special=/[-[\]{}()*+?.\\^$|,#\s]/g;RegExp.escape=function(t){return t.replace(special,"\\$&")}}
+if(!RegExp.escape){var special=/[-[\]{}()*+?.\\^$|,#\s]/g;RegExp.escape=function(e){return e.replace(special,"\\$&")}}
