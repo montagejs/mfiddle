@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Embed MFiddle</title>
+    
+    <style type="text/css">
+        
+        html {
+            height: 100%;
+            background: transparent;
+        }
+        
+        body {
+            height: 100%;
+            margin: 0;
+            background: transparent;
+        }
+        
+        .montage-app-loaded {
+            height: 100%;
+        }
+        
+        
+    </style>
+    
+    <script src="node_modules/montage/montage.js"></script>
+    <script type="text/montage-serialization">{
+        "owner": {
+            "prototype": "montage/ui/loader.reel",
+            "properties": {
+                "element": {"#": "loader"},
+                "mainModule": "ui/embed.reel",
+                "mainName": "Embed"
+            }
+        }
+    }</script>
+</head>
+<body>
+    <div data-montage-id="loader">
+        <div id="montage-app-bootstrapper">Loading MFiddle</div>
+    </div>
+</body>
+</html>

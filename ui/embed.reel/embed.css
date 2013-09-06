@@ -1,18 +1,3 @@
-
-html {
-    height: 100%;
-    background: transparent !important;
-}
-
-body {
-    height: 100%;
-    margin: 0;
-}
-
-.montage-app-loaded {
-    height: 100%;
-}
-
 .mfiddle-Embed {
     min-width: 400px;
     height: 100%;
