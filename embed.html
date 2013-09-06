@@ -17,8 +17,15 @@
             background: transparent;
         }
         
-        .montage-app-loaded {
+        .mfiddle-Frame {
             height: 100%;
+        }
+        
+        .mfiddle-Frame-loader {
+            height: 100%;
+            text-align: center;
+            background: hsla(0,0%,0%,.05) url(logo.png) no-repeat center;
+            background-size: auto 27px;
         }
         
         
@@ -37,8 +44,8 @@
     }</script>
 </head>
 <body>
-    <div data-montage-id="loader">
-        <div id="montage-app-bootstrapper">Loading MFiddle</div>
+    <div data-montage-id="loader" class="mfiddle-Frame">
+        <div class="mfiddle-Frame-loader"></div>
     </div>
 </body>
 </html>
