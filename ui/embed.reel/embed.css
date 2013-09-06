@@ -1,37 +1,50 @@
-.mfiddle-Embed {
 
+html {
+    background: transparent !important;
+}
+
+body {
+    margin: 0;
+}
+
+.mfiddle-Embed {
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
 .mfiddle-Embed-tabs {
-    border-bottom: 1px solid gray;
+    position: relative;
+    z-index: 1;
+    padding-left: 27px;
 }
 
 .mfiddle-Embed-tab.matte-Button {
-    position: relative;
-    left: 40px;
-    font-size: 16px;
     display: inline-block;
+    position: relative;
     margin: 0;
-    padding: 4px;
-    padding-left: 16px;
-    padding-right: 16px;
-    background-color: transparent;
-
-    height: auto;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
     margin-bottom: -1px;
+    padding: 6px 12px;
+    height: auto;
+    font-family: inherit;
+    font-size: 13px;
+    color: #999;
     border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    background-color: transparent;
 }
 
 .mfiddle-Embed-tab.matte-Button:hover {
-    border: 1px solid gray;
+    border-color: hsla(0,0%,0%,.2);
+}
+
+.mfiddle-Embed-tab.matte-Button:active {
+    background-color: hsl(60,60%,98%);
 }
 
 .mfiddle-Embed-tab.matte-Button.mfiddle-Embed-tab--selected {
-    border: 1px solid gray;
-    border-bottom-color: white;
-    background-color: white;
+    color: #333;
+    border-color: hsl(60,20%,80%);
+    background-color: hsl(60,60%,98%);
 }
 
 .mfiddle-Embed-mfiddle {
@@ -40,12 +53,15 @@
 
 .mfiddle-Embed-content {
     position: relative;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
     height: 100%;
     min-width: 300px;
     min-height: 200px;
+    border-radius: 5px;
+    border: 1px solid hsl(60,20%,80%);
+    background-color: hsl(60,60%,98%);
+}
 
-    background-color:white;
+.mfiddle-Embed .CodeMirror-gutter{
+    border-radius: 5px 0 0 5px;
+    background-color: hsla(0, 0%, 0%, 0.03);
 }
