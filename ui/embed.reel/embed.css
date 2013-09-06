@@ -34,21 +34,33 @@ body {
 }
 
 .mfiddle-Embed-tab.matte-Button:hover {
-    border-color: hsla(0,0%,0%,.2);
+    border-color: hsl(60,20%,80%);
 }
 
-.mfiddle-Embed-tab.matte-Button:active {
-    background-color: hsl(60,60%,98%);
-}
-
+.mfiddle-Embed-tab.matte-Button:active,
 .mfiddle-Embed-tab.matte-Button.mfiddle-Embed-tab--selected {
     color: #333;
     border-color: hsl(60,20%,80%);
     background-color: hsl(60,60%,98%);
 }
 
-.mfiddle-Embed-mfiddle {
+.mfiddle-Embed-edit {
     float: right;
+    padding: 3px 12px;
+    font-size: 13px;
+    color: #999;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid hsl(60,20%,80%);
+    background-color: hsl(60,60%,98%);
+}
+
+.mfiddle-Embed-edit:hover {
+    background-color: transparent;
+}
+
+.mfiddle-Embed-edit:active {
+    border-color: transparent;
 }
 
 .mfiddle-Embed-content {
