@@ -1,7 +1,7 @@
 .mfiddle-Embed {
+    position: relative;
     min-width: 400px;
-    height: 100%;
-    padding-bottom: 30px;
+    height: 232px; /* first 15 lines */
     box-sizing: border-box;
     font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
@@ -59,20 +59,29 @@
 }
 
 .mfiddle-Embed-content {
-    position: relative;
-    height: 100%;
+    position: absolute;
+    top: 28px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
     min-width: 300px;
     min-height: 70px;
     border-radius: 5px;
     border: 1px solid hsl(60,20%,80%);
-    background-color: hsl(60,60%,98%);
+    background-color: hsl(60,60%,98%);    
 }
 
 /* CodeMirror overrides -------------------------- */
 
 .mfiddle-Embed .CodeMirror,
 .mfiddle-Embed .CodeMirror-scroll {
-    height: 100%;
+    position: absolute;
+    height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .mfiddle-Embed .CodeMirror-gutter{
