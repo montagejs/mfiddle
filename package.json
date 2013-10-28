@@ -10,5 +10,5 @@
         "type": "git",
         "url": "https://github.com/montagejs/mfiddle.git"
     },
-    "bundle": ["ui/main.reel"]
+    "bundle": ["ui/main.reel", "embed/ui/main.reel"]
 }
