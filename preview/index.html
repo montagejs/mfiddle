@@ -29,10 +29,25 @@
         }
 
         .mfiddle-Frame .mfiddle-Embed,
-        .mfiddle-Frame .embed-Main {
+        .mfiddle-Frame .embed-Main,
+        .mfiddle-Frame .Preview {
             height: 100%; /* Take up the whole height in an iFrame */
         }
-
+        
+        .mfiddle-Frame .Preview {
+            height: 100%;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid hsl(0,0%,80%);
+            background-color: hsl(0,0%,95%);
+        }
+        
+        .mfiddle-Frame .montage-frame {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
 
     </style>
 
