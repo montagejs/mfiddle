@@ -3,13 +3,16 @@
 set -e -x
 
 MFIDDLE_DIR="$(dirname ${BASH_SOURCE[0]})"
+MFIDDLE_BUILD_DIR="$MFIDDLE_DIR/builds/mfiddle"
 # We should probably read the dependencies from the package.json but let's keep
 # simple for now.
 FRAME_DEPS="montage matte digit"
 FRAME_DIR="ui/montage-frame.reel/frame"
 FRAME_DIR_SRC="$MFIDDLE_DIR/$FRAME_DIR"
-FRAME_DIR_DEST="$MFIDDLE_DIR/builds/mfiddle/$FRAME_DIR"
+FRAME_DIR_DEST="$MFIDDLE_BUILD_DIR/$FRAME_DIR"
 FRAME_BUILD_DIR="$FRAME_DIR_DEST/builds/mfiddle-frame"
+EMBED_DIR="embed"
+PREVIEW_DIR="preview"
 
 # Mop mfiddle itself first, this will not mop the frame application used by
 # montage-frame.reel component. We do it manually afterwards.
@@ -48,4 +51,14 @@ PARENT_DIR=$(dirname "$FRAME_DIR_DEST")
 FRAME_APP_NAME=$(basename "$FRAME_BUILD_DIR")
 mv "$PARENT_DIR/$FRAME_APP_NAME" "$FRAME_DIR_DEST"
 
+# Fix embed and preview bundles
+# Since embed and preview apps use mfiddle's package.json the hashes declared
+# there and the hashes from their bundled files do not match. To avoid this
+# problem we just copy the bundled files from mfiddle into embed and preview,
+# they're basically the same.
 
+EMBED_BUILD_DIR="$MFIDDLE_BUILD_DIR/$EMBED_DIR"
+PREVIEW_BUILD_DIR="$MFIDDLE_BUILD_DIR/$PREVIEW_DIR"
+
+cp "$MFIDDLE_BUILD_DIR"/index.html.bundle-* "$EMBED_BUILD_DIR/"
+cp "$MFIDDLE_BUILD_DIR"/index.html.bundle-* "$PREVIEW_BUILD_DIR/"

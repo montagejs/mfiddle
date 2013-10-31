@@ -1,0 +1,52 @@
+{
+  "blueprint_component_reference": {
+    "prototype": "montage/core/meta/blueprint-reference",
+    "properties": {
+      "valueReference": {
+        "blueprintName": "Component",
+        "blueprintModule": {
+          "%": "montage/ui/component.meta"
+        }
+      }
+    }
+  },
+  "blueprint_unnamed_id": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "id",
+      "blueprint": {"@": "root"}
+    }
+  },
+  "blueprint_unnamed_fiddle": {
+    "prototype": "montage/core/meta/property-blueprint",
+    "properties": {
+      "name": "fiddle",
+      "blueprint": {"@": "root"},
+      "valueType": "object"
+    }
+  },
+  "root": {
+    "prototype": "montage/core/meta/module-blueprint",
+    "properties": {
+      "name": null,
+      "blueprintModule": {
+        "%": "ui/preview.reel/preview.meta"
+      },
+      "parent": {"@": "blueprint_component_reference"},
+      "propertyBlueprints": [
+        {"@": "blueprint_unnamed_id"},
+        {"@": "blueprint_unnamed_fiddle"}
+      ],
+      "propertyBlueprintGroups": {
+        "Preview": [
+          {"@": "blueprint_unnamed_id"},
+          {"@": "blueprint_unnamed_fiddle"}
+        ]
+      },
+      "module": {
+        "%": "ui/preview.reel"
+      },
+      "exportName": "Preview"
+    }
+  }
+}
