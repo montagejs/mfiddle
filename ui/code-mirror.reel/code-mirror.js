@@ -45,8 +45,31 @@ exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mir
     indentUnit: {value: 4},
     matchBrackets: {value: false},
     lineNumbers: {value: false},
-    mode: {value: null},
+    readOnly: {value: false},
     _newValue: {value: null},
+
+    _mode: {
+        value: null
+    },
+
+    mode: {
+        set: function(value) {
+            this._mode = value;
+            if (this._codeMirror) {
+                if (value == "json") {
+                    this._codeMirror.setOption("mode", {
+                        name: "javascript",
+                        json: true
+                    });
+                } else {
+                    this._codeMirror.setOption("mode", value);
+                }
+            }
+        },
+        get: function() {
+            return this._mode;
+        }
+    },
 
     enterDocument: {
         value: function(firstTime) {
@@ -61,6 +84,7 @@ exports.CodeMirror = Component.specialize(/** @lends module:"montage/ui/code-mir
                     indentUnit: this.indentUnit,
                     matchBrackets: this.matchBracket,
                     lineNumbers: this.lineNumbers,
+                    readOnly: this.readOnly,
                     value: this.value
                 });
                 this._newValue = null;

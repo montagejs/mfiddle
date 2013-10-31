@@ -1,0 +1,90 @@
+.mfiddle-Embed {
+    position: relative;
+    min-width: 400px;
+    height: 232px; /* first 15 lines */
+    box-sizing: border-box;
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+.mfiddle-Embed-tabs {
+    position: relative;
+    z-index: 1;
+    padding-left: 27px;
+}
+
+.mfiddle-Embed-tab.matte-Button {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    margin-bottom: -1px;
+    padding: 6px 12px;
+    height: auto;
+    font-family: inherit;
+    font-size: 13px;
+    color: #999;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    background-color: transparent;
+}
+
+.mfiddle-Embed-tab.matte-Button:hover {
+    border-color: hsl(60,20%,80%);
+}
+
+.mfiddle-Embed-tab.matte-Button:active,
+.mfiddle-Embed-tab.matte-Button.mfiddle-Embed-tab--selected {
+    color: #333;
+    border-color: hsl(60,20%,80%);
+    background-color: hsl(60,60%,98%);
+}
+
+.mfiddle-Embed-edit {
+    float: right;
+    padding: 3px 12px;
+    font-size: 13px;
+    color: #999;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid hsl(60,20%,80%);
+    background-color: hsl(60,60%,98%);
+}
+
+.mfiddle-Embed-edit:hover {
+    background-color: transparent;
+}
+
+.mfiddle-Embed-edit:active {
+    border-color: transparent;
+}
+
+.mfiddle-Embed-content {
+    position: absolute;
+    top: 28px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    min-width: 300px;
+    min-height: 70px;
+    border-radius: 5px;
+    border: 1px solid hsl(60,20%,80%);
+    background-color: hsl(60,60%,98%);    
+}
+
+/* CodeMirror overrides -------------------------- */
+
+.mfiddle-Embed .CodeMirror,
+.mfiddle-Embed .CodeMirror-scroll {
+    position: absolute;
+    height: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.mfiddle-Embed .CodeMirror-gutter{
+    border-radius: 5px 0 0 5px;
+    background-color: hsla(0, 0%, 0%, 0.03);
+}

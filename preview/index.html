@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Preview MFiddle</title>
+
+    <style type="text/css">
+
+        html {
+            height: 100%;
+            background: transparent;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            background: transparent;
+        }
+
+        .mfiddle-Frame {
+            height: 100%;
+        }
+
+        .mfiddle-Frame-loader {
+            height: 100%;
+            text-align: center;
+            background: hsla(0,0%,0%,.05) url(../logo.png) no-repeat center;
+            background-size: auto 27px;
+        }
+
+        .mfiddle-Frame .mfiddle-Embed,
+        .mfiddle-Frame .embed-Main,
+        .mfiddle-Frame .Preview {
+            height: 100%; /* Take up the whole height in an iFrame */
+        }
+        
+        .mfiddle-Frame .Preview {
+            height: 100%;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid hsl(0,0%,80%);
+            background-color: hsl(0,0%,95%);
+        }
+        
+        .mfiddle-Frame .montage-frame {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+    </style>
+
+    <script src="../node_modules/montage/montage.js" data-package="../"></script>
+    <script type="text/montage-serialization">{
+        "owner": {
+            "prototype": "montage/ui/loader.reel",
+            "properties": {
+                "element": {"#": "loader"},
+                "mainModule": "preview/ui/main.reel",
+                "mainName": "Main"
+            }
+        }
+    }</script>
+</head>
+<body>
+    <div data-montage-id="loader" class="mfiddle-Frame">
+        <div class="mfiddle-Frame-loader"></div>
+    </div>
+    <!-- Google -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-35717912-1']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
