@@ -19,6 +19,12 @@
 
         .mfiddle-Frame {
             height: 100%;
+            
+            /* Disable selection, get's enabled again for ".CodeMirror-lines" */
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                -ms-user-select: none;
+                    user-select: none; 
         }
 
         .mfiddle-Frame-loader {
