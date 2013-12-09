@@ -1,10 +1,10 @@
 {
     "name": "mfiddle",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "dependencies": {
-        "montage" : "~0.13.0",
-        "matte" : "~0.1.1",
-        "digit" : "~0.3.1"
+        "montage" : "~0.13.9",
+        "matte" : "~0.1.4",
+        "digit" : "~0.4.0"
     },
     "repository": {
         "type": "git",
