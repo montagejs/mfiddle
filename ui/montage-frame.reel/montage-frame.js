@@ -43,6 +43,7 @@ exports.MontageFrame = Component.specialize(/** @lends module:"montage/ui/montag
     _serialization: {value: null},
     _html: {value: null},
     _javascript: {value: null},
+    _hasNewData: {value: false},
     _iframeReady: {value: false},
     _iframeWindow: {value: null},
     _iframeDocument: {value: null},
@@ -101,13 +102,15 @@ exports.MontageFrame = Component.specialize(/** @lends module:"montage/ui/montag
             this._serialization = serialization;
             this._html = html;
             this._javascript = javascript;
+            this._hasNewData = true;
             this.needsDraw = true;
         }
     },
 
     draw: {
         value: function() {
-            if (this._iframeReady) {
+            if (this._iframeReady && this._hasNewData) {
+                this._hasNewData = false;
                 var oldSerialization = this._iframeDocument.head.querySelector("script[type='text/montage-serialization']");
                 if (oldSerialization) {
                     oldSerialization.parentNode.removeChild(oldSerialization);
