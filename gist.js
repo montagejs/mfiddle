@@ -4,7 +4,7 @@
  */
 
 var GITHUB_API_URL = 'https://api.github.com/';
-var GITHUB_API_PROXY_URL = 'https://api.github.com/';
+var GITHUB_API_PROXY_URL = 'http://mfiddle.jit.su/';
 
 var gist = exports.gist = {
     clientId: 'clientId',
