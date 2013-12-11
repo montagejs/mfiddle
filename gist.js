@@ -3,6 +3,9 @@
  * https://github.com/LeaVerou/dabblet/blob/master/code/global.js
  */
 
+var GITHUB_API_URL = 'https://api.github.com/';
+var GITHUB_API_PROXY_URL = 'https://api.github.com/';
+
 var gist = exports.gist = {
     clientId: 'clientId',
     files: null,
@@ -52,9 +55,11 @@ var gist = exports.gist = {
                 (o.rev? '/' + o.rev : '') +
                 (o.gpath || '');
 
+        var githubUrl = o.method === "GET" ? GITHUB_API_PROXY_URL : GITHUB_API_URL;
+
         this._xhr({
             method: o.method,
-            url: 'https://api.github.com/' + path + (!o.anon && window.ACCESS_TOKEN? '?access_token=' + ACCESS_TOKEN : ''),
+            url: githubUrl + path + (!o.anon && window.ACCESS_TOKEN? '?access_token=' + ACCESS_TOKEN : ''),
             headers: o.headers,
             callback: function(xhr) {
                 var data = xhr.responseText? JSON.parse(xhr.responseText) : null;
