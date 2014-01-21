@@ -390,3 +390,24 @@ div.CodeMirror, div.CodeMirror-scroll {
 .montage-app-bootstrapping .montage-app-loading #montage-app-bootstrapper {
     display: none;
 }
+
+
+/* Teaser Button */
+
+.teaser-button {
+    position: absolute;
+    top: 0;
+    right: 288px;
+    width: 48px;
+    height: 48px;
+    background: url(../../teaser-button.png) no-repeat center center;
+    background-size: 48px 48px;
+}
+
+.teaser-button:hover {
+    opacity: .9;
+}
+
+.teaser-button:active {
+    opacity: .6;
+}
