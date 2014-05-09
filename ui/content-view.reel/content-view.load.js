@@ -1,1 +1,1 @@
-montageDefine("2156119","ui/content-view.reel/content-view",{dependencies:["montage/ui/component"],factory:function(t,e){var n=t("montage/ui/component").Component;e.ContentView=n.specialize({})}});
+montageDefine("478e387","ui/content-view.reel/content-view",{dependencies:["montage/ui/component"],factory:function(e,t){var n=e("montage/ui/component").Component;t.ContentView=n.specialize({})}});

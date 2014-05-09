@@ -1,0 +1,1 @@
+function evaluate(e,t,n,i,r){var a;a="string"==typeof e?parse(e):e;var s=compile(a),o=new Scope(t);return o.parameters=n,o.document=i,o.components=r,s(o)}var parse=require("./parse"),compile=require("./compile-evaluator"),Scope=require("./scope");module.exports=evaluate;

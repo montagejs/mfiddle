@@ -1,0 +1,1 @@
+montageDefine("8bf8fe8","inherits",{dependencies:["util"],factory:function(e,t,n){n.exports=e("util").inherits}});

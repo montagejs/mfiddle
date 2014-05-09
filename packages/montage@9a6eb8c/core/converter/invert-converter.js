@@ -1,0 +1,1 @@
+var Montage=require("../core").Montage,Converter=require("./converter").Converter,InvertConverter=exports.InvertConverter=Converter.specialize({convert:{value:function(e){return!e}},revert:{value:function(e){return!e}}});

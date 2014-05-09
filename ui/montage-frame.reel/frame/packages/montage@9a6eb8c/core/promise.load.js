@@ -1,0 +1,1 @@
+montageDefine("9a6eb8c","core/promise",{dependencies:["q"],factory:function(e,t){t.Promise=e("q")}});
