@@ -167,7 +167,7 @@ exports.examples = [
                     "element": {"#": "text"}
                 },
                 "bindings": {
-                    "value": {"<-": "@repetition.objectAtCurrentIteration"}
+                    "value": {"<-": "@repetition:iteration.object"}
                 }
             }
         },
@@ -202,7 +202,7 @@ exports.examples = [
                     "element": {"#": "button"}
                 },
                 "bindings": {
-                    "label": {"<-": "@repetition.objectAtCurrentIteration"}
+                    "label": {"<-": "@repetition:iteration.object"}
                 },
                 "listeners": [{
                     "type": "action",
