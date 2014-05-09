@@ -2,9 +2,9 @@
     "name": "mfiddle",
     "version": "1.0.3",
     "dependencies": {
-        "montage" : "~0.13.10",
-        "matte" : "~0.1.4",
-        "digit" : "~0.4.0"
+        "montage" : "~0.14.0",
+        "matte" : "~0.2.0",
+        "digit" : "~0.5.0"
     },
     "repository": {
         "type": "git",
