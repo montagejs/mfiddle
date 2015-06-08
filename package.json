@@ -2,7 +2,7 @@
     "name": "mfiddle",
     "version": "1.0.3",
     "dependencies": {
-        "montage" : "~0.14.0",
+        "montage" : "~0.15.0",
         "matte" : "~0.2.0",
         "digit" : "~0.5.0"
     },
