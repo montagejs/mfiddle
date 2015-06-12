@@ -4,7 +4,6 @@
  */
 
 var GITHUB_API_URL = 'https://api.github.com/';
-var GITHUB_API_PROXY_URL = 'http://mfiddle.jit.su/';
 
 var gist = exports.gist = {
     clientId: 'clientId',
@@ -55,11 +54,9 @@ var gist = exports.gist = {
                 (o.rev? '/' + o.rev : '') +
                 (o.gpath || '');
 
-        var githubUrl = o.method === "GET" ? GITHUB_API_PROXY_URL : GITHUB_API_URL;
-
         this._xhr({
             method: o.method,
-            url: githubUrl + path + (!o.anon && window.ACCESS_TOKEN? '?access_token=' + ACCESS_TOKEN : ''),
+            url: GITHUB_API_URL + path + (!o.anon && window.ACCESS_TOKEN? '?access_token=' + ACCESS_TOKEN : ''),
             headers: o.headers,
             callback: function(xhr) {
                 var data = xhr.responseText? JSON.parse(xhr.responseText) : null;
